@@ -1,0 +1,32 @@
+2024-11-19T16:57:38.902+01:00  INFO 10844 --- [restartedMain] com.app.Citronix.CitronixApplication     : Starting CitronixApplication using Java 22.0.2 with PID 10844 (C:\Users\yc\Desktop\AURA\sprint3\BELHAJ_MOKHLIS_S3_B4_Citronix\Citronix\Citronix\target\classes started by YC in C:\Users\yc\Desktop\AURA\sprint3\BELHAJ_MOKHLIS_S3_B4_Citronix\Citronix\Citronix)
+2024-11-19T16:57:38.905+01:00 DEBUG 10844 --- [restartedMain] com.app.Citronix.CitronixApplication     : Running with Spring Boot v3.3.5, Spring v6.1.14
+2024-11-19T16:57:38.907+01:00  INFO 10844 --- [restartedMain] com.app.Citronix.CitronixApplication     : The following 2 profiles are active: "secrets", "prod"
+2024-11-19T16:57:38.964+01:00  INFO 10844 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-11-19T16:57:38.964+01:00  INFO 10844 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-11-19T16:57:39.730+01:00  INFO 10844 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-19T16:57:39.754+01:00  INFO 10844 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 0 JPA repository interfaces.
+2024-11-19T16:57:40.426+01:00  INFO 10844 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-11-19T16:57:40.448+01:00  INFO 10844 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-11-19T16:57:40.449+01:00  INFO 10844 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-11-19T16:57:40.506+01:00  INFO 10844 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-11-19T16:57:40.507+01:00  INFO 10844 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1542 ms
+2024-11-19T16:57:40.556+01:00  INFO 10844 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-11-19T16:57:40.776+01:00  INFO 10844 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2cbe5533
+2024-11-19T16:57:40.778+01:00  INFO 10844 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-11-19T16:57:40.794+01:00  INFO 10844 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/citronix_prod'
+2024-11-19T16:57:40.943+01:00  INFO 10844 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-19T16:57:41.006+01:00  INFO 10844 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-19T16:57:41.057+01:00  INFO 10844 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-11-19T16:57:41.441+01:00  INFO 10844 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-19T16:57:41.510+01:00  WARN 10844 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-11-19T16:57:41.856+01:00  INFO 10844 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-19T16:57:41.861+01:00  INFO 10844 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-19T16:57:41.922+01:00  WARN 10844 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-19T16:57:42.345+01:00  INFO 10844 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-11-19T16:57:42.380+01:00  INFO 10844 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-11-19T16:57:42.399+01:00  INFO 10844 --- [restartedMain] com.app.Citronix.CitronixApplication     : Started CitronixApplication in 4.088 seconds (process running for 4.663)
+2024-11-19T16:57:42.406+01:00  INFO 10844 --- [restartedMain] com.app.Citronix.CitronixApplication     : CitronixApplication started
+2024-11-19T16:58:12.241+01:00  INFO 10844 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-11-19T16:58:12.257+01:00  INFO 10844 --- [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-19T16:58:12.261+01:00  INFO 10844 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-11-19T16:58:12.265+01:00  INFO 10844 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
