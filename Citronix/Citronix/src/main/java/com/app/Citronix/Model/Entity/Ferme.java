@@ -28,7 +28,7 @@ public class Ferme {
     @Column(nullable = false)
     @NotNull(message = "La localisation est obligatoire")
     @Size(min = 2, max = 200, message = "La localisation doit contenir entre 2 et 200 caractères")
-    private String localisation;
+    private String adress;
 
     @Column(nullable = false)
     @NotNull(message = "La superficie est obligatoire")

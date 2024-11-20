@@ -1,11 +1,15 @@
 package com.app.Citronix.Model.DTO;
 
 import lombok.Data;
+
+
 import javax.validation.constraints.*;
 import java.time.LocalDate;
 
 @Data
 public class FermeDTO {
+
+
     private Long id;
     
     @NotNull(message = "Le nom de la ferme est obligatoire")
@@ -14,7 +18,7 @@ public class FermeDTO {
     
     @NotNull(message = "La localisation est obligatoire")
     @Size(min = 2, max = 200, message = "La localisation doit contenir entre 2 et 200 caractères")
-    private String localisation;
+    private String adress;
     
     @NotNull(message = "La superficie est obligatoire")
     @Positive(message = "La superficie doit être supérieure à 0")
@@ -23,4 +27,7 @@ public class FermeDTO {
     
     @PastOrPresent(message = "La date de création ne peut pas être dans le futur")
     private LocalDate dateCreation;
+
+        
+    
 }
