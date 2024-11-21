@@ -7860,4 +7860,509 @@ Database is already closed (to disable automatic closing at VM shutdown, add ";D
  2024-11-21 14:29:15 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
  2024-11-21 14:29:15 [restartedMain] INFO  com.app.Citronix.CitronixApplication - Started CitronixApplication in 1.644 seconds (JVM running for 158.446)
  2024-11-21 14:29:15 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+ 2024-11-21 14:30:57 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 8 class path changes (0 additions, 0 deletions, 8 modifications)
+ 2024-11-21 14:30:57 [Thread-21] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+ 2024-11-21 14:30:57 [Thread-21] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+ 2024-11-21 14:30:57 [Thread-21] WARN  o.s.b.f.s.DisposableBeanAdapter - Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de données est déjà fermée (pour désactiver la fermeture automatique à l'arrêt de la VM, ajoutez "; DB_CLOSE_ON_EXIT = FALSE" à l'URL db)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-214]
+ 2024-11-21 14:30:57 [Thread-21] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Shutdown initiated...
+ 2024-11-21 14:30:57 [Thread-21] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Shutdown completed.
+ 2024-11-21 14:30:57 [restartedMain] INFO  com.app.Citronix.CitronixApplication - Starting CitronixApplication using Java 1.8.0_411 on LAPTOP-G0FPLGLS with PID 11752 (C:\Users\yc\Desktop\AURA\sprint3\BELHAJ_MOKHLIS_S3_B4_Citronix\Citronix\Citronix\target\classes started by YC in C:\Users\yc\Desktop\AURA\sprint3\BELHAJ_MOKHLIS_S3_B4_Citronix\Citronix\Citronix)
+ 2024-11-21 14:30:57 [restartedMain] DEBUG com.app.Citronix.CitronixApplication - Running with Spring Boot v2.7.18, Spring v5.3.31
+ 2024-11-21 14:30:57 [restartedMain] INFO  com.app.Citronix.CitronixApplication - The following 2 profiles are active: "secrets", "dev"
+ 2024-11-21 14:30:58 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+ 2024-11-21 14:30:58 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 1 JPA repository interfaces.
+ 2024-11-21 14:30:58 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+ 2024-11-21 14:30:58 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+ 2024-11-21 14:30:58 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.83]
+ 2024-11-21 14:30:58 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+ 2024-11-21 14:30:58 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 250 ms
+ 2024-11-21 14:30:58 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Starting...
+ 2024-11-21 14:30:58 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Start completed.
+ 2024-11-21 14:30:58 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:citronixdb'
+ 2024-11-21 14:30:58 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+ 2024-11-21 14:30:58 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+ 2024-11-21 14:30:58 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+ 2024-11-21 14:30:58 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+ 2024-11-21 14:30:58 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+ 2024-11-21 14:30:58 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+ 2024-11-21 14:30:58 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+ 2024-11-21 14:30:58 [restartedMain] INFO  com.app.Citronix.CitronixApplication - Started CitronixApplication in 0.712 seconds (JVM running for 261.707)
+ 2024-11-21 14:30:58 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+ 2024-11-21 14:31:02 [restartedMain] INFO  com.app.Citronix.CitronixApplication - Starting CitronixApplication using Java 1.8.0_411 on LAPTOP-G0FPLGLS with PID 18616 (C:\Users\yc\Desktop\AURA\sprint3\BELHAJ_MOKHLIS_S3_B4_Citronix\Citronix\Citronix\target\classes started by YC in C:\Users\yc\Desktop\AURA\sprint3\BELHAJ_MOKHLIS_S3_B4_Citronix\Citronix\Citronix)
+ 2024-11-21 14:31:02 [restartedMain] DEBUG com.app.Citronix.CitronixApplication - Running with Spring Boot v2.7.18, Spring v5.3.31
+ 2024-11-21 14:31:02 [restartedMain] INFO  com.app.Citronix.CitronixApplication - The following 2 profiles are active: "secrets", "dev"
+ 2024-11-21 14:31:02 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+ 2024-11-21 14:31:02 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+ 2024-11-21 14:31:02 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+ 2024-11-21 14:31:02 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 45 ms. Found 1 JPA repository interfaces.
+ 2024-11-21 14:31:03 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+ 2024-11-21 14:31:03 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+ 2024-11-21 14:31:03 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.83]
+ 2024-11-21 14:31:03 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+ 2024-11-21 14:31:03 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1921 ms
+ 2024-11-21 14:31:04 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+ 2024-11-21 14:31:04 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+ 2024-11-21 14:31:04 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:citronixdb'
+ 2024-11-21 14:31:04 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+ 2024-11-21 14:31:04 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+ 2024-11-21 14:31:04 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+ 2024-11-21 14:31:04 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+ 2024-11-21 14:31:05 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+ 2024-11-21 14:31:05 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+ 2024-11-21 14:31:06 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+ 2024-11-21 14:31:06 [restartedMain] WARN  o.s.b.d.a.OptionalLiveReloadServer - Unable to start LiveReload server
+ 2024-11-21 14:31:06 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+ 2024-11-21 14:31:06 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+ 2024-11-21 14:31:07 [restartedMain] WARN  o.s.b.f.s.DisposableBeanAdapter - Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de données est déjà fermée (pour désactiver la fermeture automatique à l'arrêt de la VM, ajoutez "; DB_CLOSE_ON_EXIT = FALSE" à l'URL db)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-214]
+ 2024-11-21 14:31:07 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+ 2024-11-21 14:31:07 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+ 2024-11-21 14:31:07 [restartedMain] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+ 2024-11-21 14:31:07 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+ 2024-11-21 14:31:07 [restartedMain] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+ 2024-11-21 14:31:24 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 30 class path changes (0 additions, 30 deletions, 0 modifications)
+ 2024-11-21 14:31:24 [Thread-25] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+ 2024-11-21 14:31:24 [Thread-25] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+ 2024-11-21 14:31:24 [Thread-25] WARN  o.s.b.f.s.DisposableBeanAdapter - Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de données est déjà fermée (pour désactiver la fermeture automatique à l'arrêt de la VM, ajoutez "; DB_CLOSE_ON_EXIT = FALSE" à l'URL db)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-214]
+ 2024-11-21 14:31:24 [Thread-25] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Shutdown initiated...
+ 2024-11-21 14:31:24 [Thread-25] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Shutdown completed.
+ 2024-11-21 14:31:34 [restartedMain] INFO  com.app.Citronix.CitronixApplication - Starting CitronixApplication using Java 1.8.0_411 on LAPTOP-G0FPLGLS with PID 11752 (C:\Users\yc\Desktop\AURA\sprint3\BELHAJ_MOKHLIS_S3_B4_Citronix\Citronix\Citronix\target\classes started by YC in C:\Users\yc\Desktop\AURA\sprint3\BELHAJ_MOKHLIS_S3_B4_Citronix\Citronix\Citronix)
+ 2024-11-21 14:31:34 [restartedMain] DEBUG com.app.Citronix.CitronixApplication - Running with Spring Boot v2.7.18, Spring v5.3.31
+ 2024-11-21 14:31:34 [restartedMain] INFO  com.app.Citronix.CitronixApplication - The following 2 profiles are active: "secrets", "dev"
+ 2024-11-21 14:31:34 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+ 2024-11-21 14:31:34 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 0 ms. Found 0 JPA repository interfaces.
+ 2024-11-21 14:31:34 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+ 2024-11-21 14:31:34 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+ 2024-11-21 14:31:34 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.83]
+ 2024-11-21 14:31:34 [restartedMain] INFO  o.a.c.c.C.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+ 2024-11-21 14:31:34 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 313 ms
+ 2024-11-21 14:31:34 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-8 - Starting...
+ 2024-11-21 14:31:34 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-8 - Start completed.
+ 2024-11-21 14:31:34 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:citronixdb'
+ 2024-11-21 14:31:34 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+ 2024-11-21 14:31:34 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+ 2024-11-21 14:31:34 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+ 2024-11-21 14:31:34 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+ 2024-11-21 14:31:34 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+ 2024-11-21 14:31:34 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+ 2024-11-21 14:31:34 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+ 2024-11-21 14:31:34 [restartedMain] INFO  com.app.Citronix.CitronixApplication - Started CitronixApplication in 0.707 seconds (JVM running for 298.046)
+ 2024-11-21 14:31:34 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+ 2024-11-21 14:31:38 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (1 addition, 0 deletions, 0 modifications)
+ 2024-11-21 14:31:38 [Thread-29] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+ 2024-11-21 14:31:38 [Thread-29] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+ 2024-11-21 14:31:38 [Thread-29] WARN  o.s.b.f.s.DisposableBeanAdapter - Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de données est déjà fermée (pour désactiver la fermeture automatique à l'arrêt de la VM, ajoutez "; DB_CLOSE_ON_EXIT = FALSE" à l'URL db)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-214]
+ 2024-11-21 14:31:38 [Thread-29] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-8 - Shutdown initiated...
+ 2024-11-21 14:31:38 [Thread-29] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-8 - Shutdown completed.
+ 2024-11-21 14:31:38 [restartedMain] INFO  com.app.Citronix.CitronixApplication - Starting CitronixApplication using Java 1.8.0_411 on LAPTOP-G0FPLGLS with PID 11752 (C:\Users\yc\Desktop\AURA\sprint3\BELHAJ_MOKHLIS_S3_B4_Citronix\Citronix\Citronix\target\classes started by YC in C:\Users\yc\Desktop\AURA\sprint3\BELHAJ_MOKHLIS_S3_B4_Citronix\Citronix\Citronix)
+ 2024-11-21 14:31:38 [restartedMain] DEBUG com.app.Citronix.CitronixApplication - Running with Spring Boot v2.7.18, Spring v5.3.31
+ 2024-11-21 14:31:38 [restartedMain] INFO  com.app.Citronix.CitronixApplication - The following 2 profiles are active: "secrets", "dev"
+ 2024-11-21 14:31:39 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+ 2024-11-21 14:31:39 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 1 ms. Found 0 JPA repository interfaces.
+ 2024-11-21 14:31:39 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+ 2024-11-21 14:31:39 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+ 2024-11-21 14:31:39 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.83]
+ 2024-11-21 14:31:39 [restartedMain] INFO  o.a.c.c.C.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+ 2024-11-21 14:31:39 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 198 ms
+ 2024-11-21 14:31:39 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-9 - Starting...
+ 2024-11-21 14:31:39 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-9 - Start completed.
+ 2024-11-21 14:31:39 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:citronixdb'
+ 2024-11-21 14:31:39 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+ 2024-11-21 14:31:39 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+ 2024-11-21 14:31:39 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+ 2024-11-21 14:31:39 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+ 2024-11-21 14:31:39 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'champMapperImpl': Lookup method resolution failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [com.app.Citronix.Model.Mapper.ChampMapperImpl] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@69a74cae]
+ 2024-11-21 14:31:39 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+ 2024-11-21 14:31:39 [restartedMain] WARN  o.s.b.f.s.DisposableBeanAdapter - Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de données est déjà fermée (pour désactiver la fermeture automatique à l'arrêt de la VM, ajoutez "; DB_CLOSE_ON_EXIT = FALSE" à l'URL db)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-214]
+ 2024-11-21 14:31:39 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-9 - Shutdown initiated...
+ 2024-11-21 14:31:39 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-9 - Shutdown completed.
+ 2024-11-21 14:31:39 [restartedMain] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+ 2024-11-21 14:31:39 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+ 2024-11-21 14:31:39 [restartedMain] ERROR o.s.boot.SpringApplication - Application run failed
+ org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'champMapperImpl': Lookup method resolution failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [com.app.Citronix.Model.Mapper.ChampMapperImpl] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@69a74cae]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:298) ~[spring-beans-5.3.31.jar:5.3.31]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1302) ~[spring-beans-5.3.31.jar:5.3.31]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1219) ~[spring-beans-5.3.31.jar:5.3.31]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582) ~[spring-beans-5.3.31.jar:5.3.31]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.31.jar:5.3.31]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.31.jar:5.3.31]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.31.jar:5.3.31]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.31.jar:5.3.31]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.31.jar:5.3.31]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955) ~[spring-beans-5.3.31.jar:5.3.31]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:929) ~[spring-context-5.3.31.jar:5.3.31]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:591) ~[spring-context-5.3.31.jar:5.3.31]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147) ~[spring-boot-2.7.18.jar:2.7.18]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:732) [spring-boot-2.7.18.jar:2.7.18]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:409) [spring-boot-2.7.18.jar:2.7.18]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308) [spring-boot-2.7.18.jar:2.7.18]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1300) [spring-boot-2.7.18.jar:2.7.18]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1289) [spring-boot-2.7.18.jar:2.7.18]
+	at com.app.Citronix.CitronixApplication.main(CitronixApplication.java:13) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_411]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_411]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_411]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_411]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) [spring-boot-devtools-2.7.18.jar:2.7.18]
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.app.Citronix.Model.Mapper.ChampMapperImpl] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@69a74cae]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:485) ~[spring-core-5.3.31.jar:5.3.31]
+	at org.springframework.util.ReflectionUtils.doWithLocalMethods(ReflectionUtils.java:321) ~[spring-core-5.3.31.jar:5.3.31]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:276) ~[spring-beans-5.3.31.jar:5.3.31]
+	... 23 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: Champ
+	at java.lang.Class.getDeclaredMethods0(Native Method) ~[na:1.8.0_411]
+	at java.lang.Class.privateGetDeclaredMethods(Class.java:2701) ~[na:1.8.0_411]
+	at java.lang.Class.getDeclaredMethods(Class.java:1975) ~[na:1.8.0_411]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:467) ~[spring-core-5.3.31.jar:5.3.31]
+	... 25 common frames omitted
+Caused by: java.lang.ClassNotFoundException: Champ
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:387) ~[na:1.8.0_411]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:418) ~[na:1.8.0_411]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:359) ~[na:1.8.0_411]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:351) ~[na:1.8.0_411]
+	at java.lang.Class.forName0(Native Method) ~[na:1.8.0_411]
+	at java.lang.Class.forName(Class.java:348) ~[na:1.8.0_411]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:145) ~[spring-boot-devtools-2.7.18.jar:2.7.18]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:351) ~[na:1.8.0_411]
+	... 29 common frames omitted
+2024-11-21 14:33:16 [restartedMain] INFO  com.app.Citronix.CitronixApplication - Starting CitronixApplication using Java 1.8.0_411 on LAPTOP-G0FPLGLS with PID 11752 (C:\Users\yc\Desktop\AURA\sprint3\BELHAJ_MOKHLIS_S3_B4_Citronix\Citronix\Citronix\target\classes started by YC in C:\Users\yc\Desktop\AURA\sprint3\BELHAJ_MOKHLIS_S3_B4_Citronix\Citronix\Citronix)
+ 2024-11-21 14:33:16 [restartedMain] DEBUG com.app.Citronix.CitronixApplication - Running with Spring Boot v2.7.18, Spring v5.3.31
+ 2024-11-21 14:33:16 [restartedMain] INFO  com.app.Citronix.CitronixApplication - The following 2 profiles are active: "secrets", "dev"
+ 2024-11-21 14:33:17 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+ 2024-11-21 14:33:17 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 1 ms. Found 0 JPA repository interfaces.
+ 2024-11-21 14:33:17 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.CannotLoadBeanClassException: Error loading class [com.app.Citronix.Model.Mapper.ChampMapperImpl] for bean with name 'champMapperImpl' defined in file [C:\Users\yc\Desktop\AURA\sprint3\BELHAJ_MOKHLIS_S3_B4_Citronix\Citronix\Citronix\target\classes\com\app\Citronix\Model\Mapper\ChampMapperImpl.class]: problem with class file or dependent class; nested exception is java.lang.ClassFormatError: Duplicate method name "toResponseLight" with signature "(LChamp;)LChampResponseLight;" in class file com/app/Citronix/Model/Mapper/ChampMapperImpl
+ 2024-11-21 14:33:17 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+ 2024-11-21 14:33:17 [restartedMain] ERROR o.s.boot.SpringApplication - Application run failed
+ org.springframework.beans.factory.CannotLoadBeanClassException: Error loading class [com.app.Citronix.Model.Mapper.ChampMapperImpl] for bean with name 'champMapperImpl' defined in file [C:\Users\yc\Desktop\AURA\sprint3\BELHAJ_MOKHLIS_S3_B4_Citronix\Citronix\Citronix\target\classes\com\app\Citronix\Model\Mapper\ChampMapperImpl.class]: problem with class file or dependent class; nested exception is java.lang.ClassFormatError: Duplicate method name "toResponseLight" with signature "(LChamp;)LChampResponseLight;" in class file com/app/Citronix/Model/Mapper/ChampMapperImpl
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1559) ~[spring-beans-5.3.31.jar:5.3.31]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:704) ~[spring-beans-5.3.31.jar:5.3.31]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:674) ~[spring-beans-5.3.31.jar:5.3.31]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getType(AbstractBeanFactory.java:722) ~[spring-beans-5.3.31.jar:5.3.31]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findMergedAnnotationOnBean(DefaultListableBeanFactory.java:751) ~[spring-beans-5.3.31.jar:5.3.31]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAnnotationOnBean(DefaultListableBeanFactory.java:744) ~[spring-beans-5.3.31.jar:5.3.31]
+	at org.springframework.boot.sql.init.dependency.AnnotationDependsOnDatabaseInitializationDetector.detect(AnnotationDependsOnDatabaseInitializationDetector.java:36) ~[spring-boot-2.7.18.jar:2.7.18]
+	at org.springframework.boot.sql.init.dependency.DatabaseInitializationDependencyConfigurer$DependsOnDatabaseInitializationPostProcessor.detectDependsOnInitializationBeanNames(DatabaseInitializationDependencyConfigurer.java:148) ~[spring-boot-2.7.18.jar:2.7.18]
+	at org.springframework.boot.sql.init.dependency.DatabaseInitializationDependencyConfigurer$DependsOnDatabaseInitializationPostProcessor.postProcessBeanFactory(DatabaseInitializationDependencyConfigurer.java:111) ~[spring-boot-2.7.18.jar:2.7.18]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:325) ~[spring-context-5.3.31.jar:5.3.31]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:191) ~[spring-context-5.3.31.jar:5.3.31]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:756) ~[spring-context-5.3.31.jar:5.3.31]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:572) ~[spring-context-5.3.31.jar:5.3.31]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147) ~[spring-boot-2.7.18.jar:2.7.18]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:732) [spring-boot-2.7.18.jar:2.7.18]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:409) [spring-boot-2.7.18.jar:2.7.18]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308) [spring-boot-2.7.18.jar:2.7.18]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1300) [spring-boot-2.7.18.jar:2.7.18]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1289) [spring-boot-2.7.18.jar:2.7.18]
+	at com.app.Citronix.CitronixApplication.main(CitronixApplication.java:13) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_411]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_411]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_411]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_411]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) [spring-boot-devtools-2.7.18.jar:2.7.18]
+Caused by: java.lang.ClassFormatError: Duplicate method name "toResponseLight" with signature "(LChamp;)LChampResponseLight;" in class file com/app/Citronix/Model/Mapper/ChampMapperImpl
+	at java.lang.ClassLoader.defineClass1(Native Method) ~[na:1.8.0_411]
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:756) ~[na:1.8.0_411]
+	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142) ~[na:1.8.0_411]
+	at java.net.URLClassLoader.defineClass(URLClassLoader.java:473) ~[na:1.8.0_411]
+	at java.net.URLClassLoader.access$100(URLClassLoader.java:74) ~[na:1.8.0_411]
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:369) ~[na:1.8.0_411]
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:363) ~[na:1.8.0_411]
+	at java.security.AccessController.doPrivileged(Native Method) ~[na:1.8.0_411]
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:362) ~[na:1.8.0_411]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.findClass(RestartClassLoader.java:160) ~[spring-boot-devtools-2.7.18.jar:2.7.18]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:142) ~[spring-boot-devtools-2.7.18.jar:2.7.18]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:351) ~[na:1.8.0_411]
+	at java.lang.Class.forName0(Native Method) ~[na:1.8.0_411]
+	at java.lang.Class.forName(Class.java:348) ~[na:1.8.0_411]
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:291) ~[spring-core-5.3.31.jar:5.3.31]
+	at org.springframework.beans.factory.support.AbstractBeanDefinition.resolveBeanClass(AbstractBeanDefinition.java:469) ~[spring-beans-5.3.31.jar:5.3.31]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doResolveBeanClass(AbstractBeanFactory.java:1621) ~[spring-beans-5.3.31.jar:5.3.31]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1548) ~[spring-beans-5.3.31.jar:5.3.31]
+	... 24 common frames omitted
+2024-11-21 14:33:35 [restartedMain] INFO  com.app.Citronix.CitronixApplication - Starting CitronixApplication using Java 1.8.0_411 on LAPTOP-G0FPLGLS with PID 11752 (C:\Users\yc\Desktop\AURA\sprint3\BELHAJ_MOKHLIS_S3_B4_Citronix\Citronix\Citronix\target\classes started by YC in C:\Users\yc\Desktop\AURA\sprint3\BELHAJ_MOKHLIS_S3_B4_Citronix\Citronix\Citronix)
+ 2024-11-21 14:33:35 [restartedMain] DEBUG com.app.Citronix.CitronixApplication - Running with Spring Boot v2.7.18, Spring v5.3.31
+ 2024-11-21 14:33:35 [restartedMain] INFO  com.app.Citronix.CitronixApplication - The following 2 profiles are active: "secrets", "dev"
+ 2024-11-21 14:33:36 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+ 2024-11-21 14:33:36 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 1 ms. Found 0 JPA repository interfaces.
+ 2024-11-21 14:33:36 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+ 2024-11-21 14:33:36 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+ 2024-11-21 14:33:36 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.83]
+ 2024-11-21 14:33:36 [restartedMain] INFO  o.a.c.c.C.[Tomcat-3].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+ 2024-11-21 14:33:36 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 381 ms
+ 2024-11-21 14:33:36 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-11 - Starting...
+ 2024-11-21 14:33:36 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-11 - Start completed.
+ 2024-11-21 14:33:36 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:citronixdb'
+ 2024-11-21 14:33:36 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+ 2024-11-21 14:33:36 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+ 2024-11-21 14:33:36 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+ 2024-11-21 14:33:36 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+ 2024-11-21 14:33:36 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+ 2024-11-21 14:33:36 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+ 2024-11-21 14:33:36 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+ 2024-11-21 14:33:36 [restartedMain] INFO  com.app.Citronix.CitronixApplication - Started CitronixApplication in 0.922 seconds (JVM running for 419.976)
+ 2024-11-21 14:33:36 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+ 2024-11-21 14:33:40 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 24 class path changes (24 additions, 0 deletions, 0 modifications)
+ 2024-11-21 14:33:40 [Thread-36] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+ 2024-11-21 14:33:40 [Thread-36] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+ 2024-11-21 14:33:40 [Thread-36] WARN  o.s.b.f.s.DisposableBeanAdapter - Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de données est déjà fermée (pour désactiver la fermeture automatique à l'arrêt de la VM, ajoutez "; DB_CLOSE_ON_EXIT = FALSE" à l'URL db)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-214]
+ 2024-11-21 14:33:40 [Thread-36] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-11 - Shutdown initiated...
+ 2024-11-21 14:33:40 [Thread-36] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-11 - Shutdown completed.
+ 2024-11-21 14:33:40 [restartedMain] INFO  com.app.Citronix.CitronixApplication - Starting CitronixApplication using Java 1.8.0_411 on LAPTOP-G0FPLGLS with PID 11752 (C:\Users\yc\Desktop\AURA\sprint3\BELHAJ_MOKHLIS_S3_B4_Citronix\Citronix\Citronix\target\classes started by YC in C:\Users\yc\Desktop\AURA\sprint3\BELHAJ_MOKHLIS_S3_B4_Citronix\Citronix\Citronix)
+ 2024-11-21 14:33:40 [restartedMain] DEBUG com.app.Citronix.CitronixApplication - Running with Spring Boot v2.7.18, Spring v5.3.31
+ 2024-11-21 14:33:40 [restartedMain] INFO  com.app.Citronix.CitronixApplication - The following 2 profiles are active: "secrets", "dev"
+ 2024-11-21 14:33:40 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+ 2024-11-21 14:33:40 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 14 ms. Found 1 JPA repository interfaces.
+ 2024-11-21 14:33:40 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+ 2024-11-21 14:33:40 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+ 2024-11-21 14:33:40 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.83]
+ 2024-11-21 14:33:40 [restartedMain] INFO  o.a.c.c.C.[Tomcat-3].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+ 2024-11-21 14:33:40 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 272 ms
+ 2024-11-21 14:33:40 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-12 - Starting...
+ 2024-11-21 14:33:41 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-12 - Start completed.
+ 2024-11-21 14:33:41 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:citronixdb'
+ 2024-11-21 14:33:41 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+ 2024-11-21 14:33:41 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+ 2024-11-21 14:33:41 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+ 2024-11-21 14:33:41 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+ 2024-11-21 14:33:41 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+ 2024-11-21 14:33:41 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+ 2024-11-21 14:33:41 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+ 2024-11-21 14:33:41 [restartedMain] INFO  com.app.Citronix.CitronixApplication - Started CitronixApplication in 0.713 seconds (JVM running for 424.508)
+ 2024-11-21 14:33:41 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+ 2024-11-21 14:33:42 [main] INFO  c.a.C.CitronixApplicationTests - Starting CitronixApplicationTests using Java 1.8.0_411 on LAPTOP-G0FPLGLS with PID 18944 (started by YC in C:\Users\yc\Desktop\AURA\sprint3\BELHAJ_MOKHLIS_S3_B4_Citronix\Citronix\Citronix)
+ 2024-11-21 14:33:42 [main] DEBUG c.a.C.CitronixApplicationTests - Running with Spring Boot v2.7.18, Spring v5.3.31
+ 2024-11-21 14:33:42 [main] INFO  c.a.C.CitronixApplicationTests - The following 2 profiles are active: "secrets", "dev"
+ 2024-11-21 14:33:43 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+ 2024-11-21 14:33:43 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 51 ms. Found 1 JPA repository interfaces.
+ 2024-11-21 14:33:43 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+ 2024-11-21 14:33:43 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+ 2024-11-21 14:33:44 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+ 2024-11-21 14:33:44 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+ 2024-11-21 14:33:44 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+ 2024-11-21 14:33:44 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+ 2024-11-21 14:33:45 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+ 2024-11-21 14:33:45 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+ 2024-11-21 14:33:46 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+ 2024-11-21 14:33:46 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:citronixdb'
+ 2024-11-21 14:33:47 [main] INFO  c.a.C.CitronixApplicationTests - Started CitronixApplicationTests in 6.083 seconds (JVM running for 7.236)
+ 2024-11-21 14:33:48 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+ 2024-11-21 14:33:48 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+ 2024-11-21 14:33:48 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+ 2024-11-21 14:35:11 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+ 2024-11-21 14:35:12 [Thread-49] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+ 2024-11-21 14:35:12 [Thread-49] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+ 2024-11-21 14:35:12 [Thread-49] WARN  o.s.b.f.s.DisposableBeanAdapter - Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de données est déjà fermée (pour désactiver la fermeture automatique à l'arrêt de la VM, ajoutez "; DB_CLOSE_ON_EXIT = FALSE" à l'URL db)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-214]
+ 2024-11-21 14:35:12 [Thread-49] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-12 - Shutdown initiated...
+ 2024-11-21 14:35:12 [Thread-49] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-12 - Shutdown completed.
+ 2024-11-21 14:35:12 [restartedMain] INFO  com.app.Citronix.CitronixApplication - Starting CitronixApplication using Java 1.8.0_411 on LAPTOP-G0FPLGLS with PID 11752 (C:\Users\yc\Desktop\AURA\sprint3\BELHAJ_MOKHLIS_S3_B4_Citronix\Citronix\Citronix\target\classes started by YC in C:\Users\yc\Desktop\AURA\sprint3\BELHAJ_MOKHLIS_S3_B4_Citronix\Citronix\Citronix)
+ 2024-11-21 14:35:12 [restartedMain] DEBUG com.app.Citronix.CitronixApplication - Running with Spring Boot v2.7.18, Spring v5.3.31
+ 2024-11-21 14:35:12 [restartedMain] INFO  com.app.Citronix.CitronixApplication - The following 2 profiles are active: "secrets", "dev"
+ 2024-11-21 14:35:12 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+ 2024-11-21 14:35:12 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 18 ms. Found 1 JPA repository interfaces.
+ 2024-11-21 14:35:12 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+ 2024-11-21 14:35:12 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+ 2024-11-21 14:35:12 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.83]
+ 2024-11-21 14:35:12 [restartedMain] INFO  o.a.c.c.C.[Tomcat-3].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+ 2024-11-21 14:35:12 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 297 ms
+ 2024-11-21 14:35:12 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-13 - Starting...
+ 2024-11-21 14:35:12 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-13 - Start completed.
+ 2024-11-21 14:35:12 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:citronixdb'
+ 2024-11-21 14:35:12 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+ 2024-11-21 14:35:12 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+ 2024-11-21 14:35:12 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+ 2024-11-21 14:35:12 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+ 2024-11-21 14:35:12 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'fermeController': Lookup method resolution failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [com.app.Citronix.Controller.FermeController] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@5d5505a4]
+ 2024-11-21 14:35:12 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+ 2024-11-21 14:35:13 [restartedMain] WARN  o.s.b.f.s.DisposableBeanAdapter - Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de données est déjà fermée (pour désactiver la fermeture automatique à l'arrêt de la VM, ajoutez "; DB_CLOSE_ON_EXIT = FALSE" à l'URL db)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-214]
+ 2024-11-21 14:35:13 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-13 - Shutdown initiated...
+ 2024-11-21 14:35:13 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-13 - Shutdown completed.
+ 2024-11-21 14:35:13 [restartedMain] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+ 2024-11-21 14:35:13 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+ 2024-11-21 14:35:13 [restartedMain] ERROR o.s.boot.SpringApplication - Application run failed
+ org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'fermeController': Lookup method resolution failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [com.app.Citronix.Controller.FermeController] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@5d5505a4]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:298) ~[spring-beans-5.3.31.jar:5.3.31]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1302) ~[spring-beans-5.3.31.jar:5.3.31]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1219) ~[spring-beans-5.3.31.jar:5.3.31]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582) ~[spring-beans-5.3.31.jar:5.3.31]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.31.jar:5.3.31]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.31.jar:5.3.31]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.31.jar:5.3.31]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.31.jar:5.3.31]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.31.jar:5.3.31]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955) ~[spring-beans-5.3.31.jar:5.3.31]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:929) ~[spring-context-5.3.31.jar:5.3.31]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:591) ~[spring-context-5.3.31.jar:5.3.31]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147) ~[spring-boot-2.7.18.jar:2.7.18]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:732) [spring-boot-2.7.18.jar:2.7.18]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:409) [spring-boot-2.7.18.jar:2.7.18]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308) [spring-boot-2.7.18.jar:2.7.18]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1300) [spring-boot-2.7.18.jar:2.7.18]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1289) [spring-boot-2.7.18.jar:2.7.18]
+	at com.app.Citronix.CitronixApplication.main(CitronixApplication.java:13) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_411]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_411]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_411]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_411]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) [spring-boot-devtools-2.7.18.jar:2.7.18]
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.app.Citronix.Controller.FermeController] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@5d5505a4]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:485) ~[spring-core-5.3.31.jar:5.3.31]
+	at org.springframework.util.ReflectionUtils.doWithLocalMethods(ReflectionUtils.java:321) ~[spring-core-5.3.31.jar:5.3.31]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:276) ~[spring-beans-5.3.31.jar:5.3.31]
+	... 23 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: FermeRequest
+	at java.lang.Class.getDeclaredMethods0(Native Method) ~[na:1.8.0_411]
+	at java.lang.Class.privateGetDeclaredMethods(Class.java:2701) ~[na:1.8.0_411]
+	at java.lang.Class.getDeclaredMethods(Class.java:1975) ~[na:1.8.0_411]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:467) ~[spring-core-5.3.31.jar:5.3.31]
+	... 25 common frames omitted
+Caused by: java.lang.ClassNotFoundException: FermeRequest
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:387) ~[na:1.8.0_411]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:418) ~[na:1.8.0_411]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:359) ~[na:1.8.0_411]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:351) ~[na:1.8.0_411]
+	at java.lang.Class.forName0(Native Method) ~[na:1.8.0_411]
+	at java.lang.Class.forName(Class.java:348) ~[na:1.8.0_411]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:145) ~[spring-boot-devtools-2.7.18.jar:2.7.18]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:351) ~[na:1.8.0_411]
+	... 29 common frames omitted
+2024-11-21 14:35:17 [restartedMain] INFO  com.app.Citronix.CitronixApplication - Starting CitronixApplication using Java 1.8.0_411 on LAPTOP-G0FPLGLS with PID 11752 (C:\Users\yc\Desktop\AURA\sprint3\BELHAJ_MOKHLIS_S3_B4_Citronix\Citronix\Citronix\target\classes started by YC in C:\Users\yc\Desktop\AURA\sprint3\BELHAJ_MOKHLIS_S3_B4_Citronix\Citronix\Citronix)
+ 2024-11-21 14:35:17 [restartedMain] DEBUG com.app.Citronix.CitronixApplication - Running with Spring Boot v2.7.18, Spring v5.3.31
+ 2024-11-21 14:35:17 [restartedMain] INFO  com.app.Citronix.CitronixApplication - The following 2 profiles are active: "secrets", "dev"
+ 2024-11-21 14:35:18 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+ 2024-11-21 14:35:18 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 16 ms. Found 1 JPA repository interfaces.
+ 2024-11-21 14:35:18 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+ 2024-11-21 14:35:18 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+ 2024-11-21 14:35:18 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.83]
+ 2024-11-21 14:35:18 [restartedMain] INFO  o.a.c.c.C.[Tomcat-4].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+ 2024-11-21 14:35:18 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 318 ms
+ 2024-11-21 14:35:18 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-14 - Starting...
+ 2024-11-21 14:35:18 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-14 - Start completed.
+ 2024-11-21 14:35:18 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:citronixdb'
+ 2024-11-21 14:35:18 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+ 2024-11-21 14:35:18 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+ 2024-11-21 14:35:18 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+ 2024-11-21 14:35:18 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+ 2024-11-21 14:35:18 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+ 2024-11-21 14:35:18 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+ 2024-11-21 14:35:18 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+ 2024-11-21 14:35:18 [restartedMain] INFO  com.app.Citronix.CitronixApplication - Started CitronixApplication in 0.745 seconds (JVM running for 521.637)
+ 2024-11-21 14:35:18 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+ 2024-11-21 14:35:35 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+ 2024-11-21 14:35:35 [Thread-53] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+ 2024-11-21 14:35:35 [Thread-53] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+ 2024-11-21 14:35:35 [Thread-53] WARN  o.s.b.f.s.DisposableBeanAdapter - Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de données est déjà fermée (pour désactiver la fermeture automatique à l'arrêt de la VM, ajoutez "; DB_CLOSE_ON_EXIT = FALSE" à l'URL db)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-214]
+ 2024-11-21 14:35:35 [Thread-53] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-14 - Shutdown initiated...
+ 2024-11-21 14:35:35 [Thread-53] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-14 - Shutdown completed.
+ 2024-11-21 14:35:35 [restartedMain] INFO  com.app.Citronix.CitronixApplication - Starting CitronixApplication using Java 1.8.0_411 on LAPTOP-G0FPLGLS with PID 11752 (C:\Users\yc\Desktop\AURA\sprint3\BELHAJ_MOKHLIS_S3_B4_Citronix\Citronix\Citronix\target\classes started by YC in C:\Users\yc\Desktop\AURA\sprint3\BELHAJ_MOKHLIS_S3_B4_Citronix\Citronix\Citronix)
+ 2024-11-21 14:35:35 [restartedMain] DEBUG com.app.Citronix.CitronixApplication - Running with Spring Boot v2.7.18, Spring v5.3.31
+ 2024-11-21 14:35:35 [restartedMain] INFO  com.app.Citronix.CitronixApplication - The following 2 profiles are active: "secrets", "dev"
+ 2024-11-21 14:35:36 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+ 2024-11-21 14:35:36 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 93 ms. Found 1 JPA repository interfaces.
+ 2024-11-21 14:35:36 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+ 2024-11-21 14:35:36 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+ 2024-11-21 14:35:36 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.83]
+ 2024-11-21 14:35:36 [restartedMain] INFO  o.a.c.c.C.[Tomcat-4].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+ 2024-11-21 14:35:36 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 704 ms
+ 2024-11-21 14:35:36 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-15 - Starting...
+ 2024-11-21 14:35:36 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-15 - Start completed.
+ 2024-11-21 14:35:36 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:citronixdb'
+ 2024-11-21 14:35:36 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+ 2024-11-21 14:35:36 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+ 2024-11-21 14:35:36 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+ 2024-11-21 14:35:36 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+ 2024-11-21 14:35:37 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+ 2024-11-21 14:35:37 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+ 2024-11-21 14:35:37 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+ 2024-11-21 14:35:37 [restartedMain] INFO  com.app.Citronix.CitronixApplication - Started CitronixApplication in 1.496 seconds (JVM running for 540.538)
+ 2024-11-21 14:35:37 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+ 2024-11-21 14:35:42 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+ 2024-11-21 14:35:43 [Thread-60] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+ 2024-11-21 14:35:43 [Thread-60] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+ 2024-11-21 14:35:43 [Thread-60] WARN  o.s.b.f.s.DisposableBeanAdapter - Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de données est déjà fermée (pour désactiver la fermeture automatique à l'arrêt de la VM, ajoutez "; DB_CLOSE_ON_EXIT = FALSE" à l'URL db)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-214]
+ 2024-11-21 14:35:43 [Thread-60] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-15 - Shutdown initiated...
+ 2024-11-21 14:35:43 [Thread-60] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-15 - Shutdown completed.
+ 2024-11-21 14:35:43 [restartedMain] INFO  com.app.Citronix.CitronixApplication - Starting CitronixApplication using Java 1.8.0_411 on LAPTOP-G0FPLGLS with PID 11752 (C:\Users\yc\Desktop\AURA\sprint3\BELHAJ_MOKHLIS_S3_B4_Citronix\Citronix\Citronix\target\classes started by YC in C:\Users\yc\Desktop\AURA\sprint3\BELHAJ_MOKHLIS_S3_B4_Citronix\Citronix\Citronix)
+ 2024-11-21 14:35:43 [restartedMain] DEBUG com.app.Citronix.CitronixApplication - Running with Spring Boot v2.7.18, Spring v5.3.31
+ 2024-11-21 14:35:43 [restartedMain] INFO  com.app.Citronix.CitronixApplication - The following 2 profiles are active: "secrets", "dev"
+ 2024-11-21 14:35:43 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+ 2024-11-21 14:35:43 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 12 ms. Found 1 JPA repository interfaces.
+ 2024-11-21 14:35:43 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+ 2024-11-21 14:35:43 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+ 2024-11-21 14:35:43 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.83]
+ 2024-11-21 14:35:43 [restartedMain] INFO  o.a.c.c.C.[Tomcat-4].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+ 2024-11-21 14:35:43 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 246 ms
+ 2024-11-21 14:35:43 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-16 - Starting...
+ 2024-11-21 14:35:43 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-16 - Start completed.
+ 2024-11-21 14:35:43 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:citronixdb'
+ 2024-11-21 14:35:43 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+ 2024-11-21 14:35:43 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+ 2024-11-21 14:35:43 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+ 2024-11-21 14:35:43 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+ 2024-11-21 14:35:44 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+ 2024-11-21 14:35:44 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+ 2024-11-21 14:35:44 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+ 2024-11-21 14:35:44 [restartedMain] INFO  com.app.Citronix.CitronixApplication - Started CitronixApplication in 0.724 seconds (JVM running for 547.422)
+ 2024-11-21 14:35:44 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+ 2024-11-21 14:35:45 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+ 2024-11-21 14:35:45 [Thread-64] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+ 2024-11-21 14:35:45 [Thread-64] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+ 2024-11-21 14:35:46 [Thread-64] WARN  o.s.b.f.s.DisposableBeanAdapter - Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de données est déjà fermée (pour désactiver la fermeture automatique à l'arrêt de la VM, ajoutez "; DB_CLOSE_ON_EXIT = FALSE" à l'URL db)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-214]
+ 2024-11-21 14:35:46 [Thread-64] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-16 - Shutdown initiated...
+ 2024-11-21 14:35:46 [Thread-64] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-16 - Shutdown completed.
+ 2024-11-21 14:35:46 [restartedMain] INFO  com.app.Citronix.CitronixApplication - Starting CitronixApplication using Java 1.8.0_411 on LAPTOP-G0FPLGLS with PID 11752 (C:\Users\yc\Desktop\AURA\sprint3\BELHAJ_MOKHLIS_S3_B4_Citronix\Citronix\Citronix\target\classes started by YC in C:\Users\yc\Desktop\AURA\sprint3\BELHAJ_MOKHLIS_S3_B4_Citronix\Citronix\Citronix)
+ 2024-11-21 14:35:46 [restartedMain] DEBUG com.app.Citronix.CitronixApplication - Running with Spring Boot v2.7.18, Spring v5.3.31
+ 2024-11-21 14:35:46 [restartedMain] INFO  com.app.Citronix.CitronixApplication - The following 2 profiles are active: "secrets", "dev"
+ 2024-11-21 14:35:46 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+ 2024-11-21 14:35:46 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 12 ms. Found 1 JPA repository interfaces.
+ 2024-11-21 14:35:46 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+ 2024-11-21 14:35:46 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+ 2024-11-21 14:35:46 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.83]
+ 2024-11-21 14:35:46 [restartedMain] INFO  o.a.c.c.C.[Tomcat-4].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+ 2024-11-21 14:35:46 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 365 ms
+ 2024-11-21 14:35:46 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-17 - Starting...
+ 2024-11-21 14:35:46 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-17 - Start completed.
+ 2024-11-21 14:35:46 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:citronixdb'
+ 2024-11-21 14:35:46 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+ 2024-11-21 14:35:46 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+ 2024-11-21 14:35:46 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+ 2024-11-21 14:35:46 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+ 2024-11-21 14:35:46 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+ 2024-11-21 14:35:46 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+ 2024-11-21 14:35:46 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+ 2024-11-21 14:35:46 [restartedMain] INFO  com.app.Citronix.CitronixApplication - Started CitronixApplication in 0.716 seconds (JVM running for 550.047)
+ 2024-11-21 14:35:46 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+ 2024-11-21 14:36:08 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat-4].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+ 2024-11-21 14:36:08 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+ 2024-11-21 14:36:08 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
  
