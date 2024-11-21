@@ -11,11 +11,10 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
+import org.springframework.format.annotation.DateTimeFormat;
 
 import com.app.Citronix.Model.DTO.Request.FermeRequest;
 import com.app.Citronix.Model.DTO.Response.FermeResponse;
-import com.app.Citronix.Model.Entity.Ferme;
 import com.app.Citronix.Service.FermeService;
 
 @RestController
@@ -62,15 +61,18 @@ public class FermeController {
     }
 
     @GetMapping("/search")
-    public ResponseEntity<List<FermeResponse>> searchFermes(
+    public ResponseEntity<Page<FermeResponse>> searchFermes(
             @RequestParam(required = false) String nom,
             @RequestParam(required = false) String adress,
             @RequestParam(required = false) Double minSuperficie,
             @RequestParam(required = false) Double maxSuperficie,
-            @RequestParam(required = false) LocalDate startDate,
-            @RequestParam(required = false) LocalDate endDate
+            @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate startDate,
+            @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate endDate,
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size
     ) {
-        return ResponseEntity.ok(fermeService.searchFermes(nom, adress, minSuperficie, maxSuperficie, startDate, endDate));
+        Pageable pageable = PageRequest.of(page, size);
+        return ResponseEntity.ok(fermeService.searchFermes(nom, adress, minSuperficie, maxSuperficie, startDate, endDate, pageable));
     }
 
 

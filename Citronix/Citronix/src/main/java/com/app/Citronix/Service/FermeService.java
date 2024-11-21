@@ -69,7 +69,15 @@ public class FermeService {
         }
     }
 
-     public List<FermeResponse> searchFermes(String nom, String adress, Double minSuperficie, Double maxSuperficie, LocalDate startDate, LocalDate endDate) {
+     public Page<FermeResponse> searchFermes(
+            String nom, 
+            String adress, 
+            Double minSuperficie, 
+            Double maxSuperficie, 
+            LocalDate startDate, 
+            LocalDate endDate,
+            Pageable pageable) {
+        
         Specification<Ferme> specs = Specification
                 .where(FermeSpecifications.withNom(nom))
                 .and(FermeSpecifications.withAdress(adress))
@@ -78,10 +86,8 @@ public class FermeService {
                 .and(FermeSpecifications.withStartDate(startDate))
                 .and(FermeSpecifications.withEndDate(endDate));
 
-        return farmRepository.findAll(specs)
-                .stream()
-                .map(fermeMapper::toResponse)
-                .collect(Collectors.toList());
+        return farmRepository.findAll(specs, pageable)
+                .map(fermeMapper::toResponse);
     }
 
 
