@@ -7,7 +7,8 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 
-
+@Entity
+@Table(name = "champs")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
