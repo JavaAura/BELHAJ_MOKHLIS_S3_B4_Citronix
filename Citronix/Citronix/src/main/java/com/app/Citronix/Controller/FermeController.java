@@ -1,5 +1,8 @@
 package com.app.Citronix.Controller;
 
+import java.time.LocalDate;
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 
 import com.app.Citronix.Model.DTO.Request.FermeRequest;
 import com.app.Citronix.Model.DTO.Response.FermeResponse;
+import com.app.Citronix.Model.Entity.Ferme;
 import com.app.Citronix.Service.FermeService;
 
 @RestController
@@ -55,6 +59,18 @@ public class FermeController {
         }else{
             return ResponseEntity.noContent().build();
         }
+    }
+
+    @GetMapping("/search")
+    public ResponseEntity<List<FermeResponse>> searchFermes(
+            @RequestParam(required = false) String nom,
+            @RequestParam(required = false) String adress,
+            @RequestParam(required = false) Double minSuperficie,
+            @RequestParam(required = false) Double maxSuperficie,
+            @RequestParam(required = false) LocalDate startDate,
+            @RequestParam(required = false) LocalDate endDate
+    ) {
+        return ResponseEntity.ok(fermeService.searchFermes(nom, adress, minSuperficie, maxSuperficie, startDate, endDate));
     }
 
 
