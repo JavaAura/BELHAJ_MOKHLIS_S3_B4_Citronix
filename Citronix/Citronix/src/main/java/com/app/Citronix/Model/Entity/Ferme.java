@@ -10,9 +10,9 @@ import javax.validation.constraints.*;
 import java.time.LocalDate;
 
 @Entity
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Data
 @Table(name = "fermes")
 public class Ferme {
 
@@ -28,15 +28,17 @@ public class Ferme {
     @Column(nullable = false)
     @NotNull(message = "La localisation est obligatoire")
     @Size(min = 2, max = 200, message = "La localisation doit contenir entre 2 et 200 caractères")
-    private String localisation;
+    private String adress;
 
     @Column(nullable = false)
     @NotNull(message = "La superficie est obligatoire")
     @Positive(message = "La superficie doit être supérieure à 0")
     @DecimalMin(value = "0.1", message = "La superficie minimale d'un champ doit être de 0.1 hectare")
     private Double superficie;
-
     @Column(name = "date_creation")
     @PastOrPresent(message = "La date de création ne peut pas être dans le futur")
     private LocalDate dateCreation;
+
+    
+    
 } 
