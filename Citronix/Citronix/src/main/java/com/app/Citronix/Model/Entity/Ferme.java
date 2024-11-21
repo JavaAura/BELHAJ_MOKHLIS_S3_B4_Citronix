@@ -8,6 +8,7 @@ import javax.persistence.*;
 import javax.validation.constraints.*;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @NoArgsConstructor
@@ -39,6 +40,6 @@ public class Ferme {
     @PastOrPresent(message = "La date de création ne peut pas être dans le futur")
     private LocalDate dateCreation;
 
-    
-    
+    @OneToMany(mappedBy = "ferme")
+    private List<Champ> champs;
 } 
