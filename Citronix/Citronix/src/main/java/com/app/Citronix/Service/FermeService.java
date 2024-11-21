@@ -6,12 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.*;
 import org.springframework.stereotype.Service;
 
-import com.app.Citronix.Model.DTO.FermeDTO;
+import com.app.Citronix.Model.DTO.Request.FermeRequest;
+import com.app.Citronix.Model.DTO.Response.FermeResponse;
 import com.app.Citronix.Model.Entity.Ferme;
 import com.app.Citronix.Model.Mapper.FermeMapper;
-import com.app.Citronix.Model.View.FermeView;
 import com.app.Citronix.Repository.FarmRepository;
-import lombok.extern.slf4j.Slf4j;
 
 
 @Service
@@ -23,29 +22,36 @@ public class FermeService {
 	private FermeMapper fermeMapper;
 
 
-    public FermeDTO saveFerme(FermeDTO fermeDTO) {
-        Ferme ferme = fermeMapper.toEntity(fermeDTO);
+    public FermeResponse saveFerme(FermeRequest fermeRequest) {
+        Ferme ferme = fermeMapper.toEntity(fermeRequest);
         ferme = farmRepository.save(ferme);
-        return fermeMapper.toDto(ferme);
+        return fermeMapper.toResponse(ferme);
     }
 
-	public Page<FermeView> getAllFermes(Pageable pageable) {
+	public Page<FermeResponse> getAllFermes(Pageable pageable) {
         Page<Ferme> fermes = farmRepository.findAll(pageable);
-        return fermes.map(fermeMapper::toView);
+        return fermes.map(fermeMapper::toResponse);
     }
 
-    public FermeView getFermeById(Long id) {
+    public FermeResponse getFermeById(Long id) {
         Optional<Ferme> ferme = farmRepository.findById(id);
         if (ferme.isPresent()) {
-            return fermeMapper.toView(ferme.get());
+            return fermeMapper.toResponse(ferme.get());
         }
         return null;
     }
 
-    public FermeDTO updateFerme(FermeDTO fermeDTO) {
-        Ferme ferme = fermeMapper.toEntity(fermeDTO);
-        ferme = farmRepository.save(ferme);
-        return fermeMapper.toDto(ferme);
+    public FermeResponse updateFerme(Long id, FermeRequest fermeRequest) {
+        Optional<Ferme> fermeOpt = farmRepository.findById(id);
+        if (fermeOpt.isPresent()) {
+            Ferme ferme = fermeOpt.get();
+            ferme.setNom(fermeRequest.getNom());
+            ferme.setAdress(fermeRequest.getAdress());
+            ferme.setSuperficie(fermeRequest.getSuperficie());
+            ferme = farmRepository.save(ferme);
+            return fermeMapper.toResponse(ferme);
+        }
+        return null;
     }
 
     public boolean deleteFerme(Long id) {
@@ -55,7 +61,7 @@ public class FermeService {
             return true;
         } else {
             return false;
-                }
+        }
     }
 
 

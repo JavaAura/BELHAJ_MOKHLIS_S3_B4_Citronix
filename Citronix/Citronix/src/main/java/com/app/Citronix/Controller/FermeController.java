@@ -9,8 +9,9 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import com.app.Citronix.Model.DTO.FermeDTO;
-import com.app.Citronix.Model.View.FermeView;
+
+import com.app.Citronix.Model.DTO.Request.FermeRequest;
+import com.app.Citronix.Model.DTO.Response.FermeResponse;
 import com.app.Citronix.Service.FermeService;
 
 @RestController
@@ -21,16 +22,40 @@ public class FermeController {
     private FermeService fermeService;
 
     @PostMapping
-    public ResponseEntity<FermeDTO> creatFerme(@Valid @RequestBody  FermeDTO request) {    	
+    public ResponseEntity<FermeResponse> createFerme(@Valid @RequestBody FermeRequest request) {    	
         return ResponseEntity.ok(fermeService.saveFerme(request));
     }
     
+    @GetMapping("/{id}")
+    public ResponseEntity<FermeResponse> getFermeById(@PathVariable Long id) {
+        FermeResponse ferme = fermeService.getFermeById(id);
+        if (ferme == null) {
+            throw new RuntimeException("Ferme not found with id: " + id);
+        }
+        return ResponseEntity.ok(ferme);
+    }
+
     @GetMapping
-    public ResponseEntity<Page<FermeView>> getAllFermes(
+    public ResponseEntity<Page<FermeResponse>> getAllFermes(
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "10") int size) {
-        
         Pageable pageable = PageRequest.of(page, size);
         return ResponseEntity.ok(fermeService.getAllFermes(pageable));
     }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<FermeResponse> updateFerme(@PathVariable Long id, @Valid @RequestBody FermeRequest request) {
+        return ResponseEntity.ok(fermeService.updateFerme(id, request));
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteFerme(@PathVariable Long id) {
+        if (!fermeService.deleteFerme(id)) {
+            throw new RuntimeException("Ferme not found with id: " + id);
+        }else{
+            return ResponseEntity.noContent().build();
+        }
+    }
+
+
 }
