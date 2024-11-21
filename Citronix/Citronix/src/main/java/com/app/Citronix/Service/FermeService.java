@@ -1,9 +1,13 @@
 package com.app.Citronix.Service;
 
+import java.time.LocalDate;
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.*;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import com.app.Citronix.Model.DTO.Request.FermeRequest;
@@ -11,6 +15,7 @@ import com.app.Citronix.Model.DTO.Response.FermeResponse;
 import com.app.Citronix.Model.Entity.Ferme;
 import com.app.Citronix.Model.Mapper.FermeMapper;
 import com.app.Citronix.Repository.FarmRepository;
+import com.app.Citronix.Specification.FermeSpecifications;
 
 
 @Service
@@ -62,6 +67,21 @@ public class FermeService {
         } else {
             return false;
         }
+    }
+
+     public List<FermeResponse> searchFermes(String nom, String adress, Double minSuperficie, Double maxSuperficie, LocalDate startDate, LocalDate endDate) {
+        Specification<Ferme> specs = Specification
+                .where(FermeSpecifications.withNom(nom))
+                .and(FermeSpecifications.withAdress(adress))
+                .and(FermeSpecifications.withMinSuperficie(minSuperficie))
+                .and(FermeSpecifications.withMaxSuperficie(maxSuperficie))
+                .and(FermeSpecifications.withStartDate(startDate))
+                .and(FermeSpecifications.withEndDate(endDate));
+
+        return farmRepository.findAll(specs)
+                .stream()
+                .map(fermeMapper::toResponse)
+                .collect(Collectors.toList());
     }
 
 
