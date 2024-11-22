@@ -9,6 +9,8 @@ import lombok.*;
 @NoArgsConstructor
 @Builder
 public class FermeRequest {
+
+    private int id;
     private String nom;
     private String adress;
     private Double superficie;
