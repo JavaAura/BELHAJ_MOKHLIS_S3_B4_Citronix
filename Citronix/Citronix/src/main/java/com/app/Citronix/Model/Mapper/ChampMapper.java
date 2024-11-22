@@ -12,7 +12,7 @@ import com.app.Citronix.Model.Entity.Champ;
 @Mapper(componentModel = "spring", uses = {FermeMapper.class})
 public interface ChampMapper {
     
-    ChampRequest toEntity(ChampRequest champRequest);
+    Champ toEntity(ChampRequest champRequest);
     
     @Mapping(target = "ferme", source = "ferme", qualifiedByName = "toResponseLight")
     ChampResponse toResponse(Champ champ);
