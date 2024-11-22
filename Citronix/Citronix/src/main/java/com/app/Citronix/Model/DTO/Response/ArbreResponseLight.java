@@ -1,14 +1,13 @@
 package com.app.Citronix.Model.DTO.Response;
 
+import lombok.*;
 import java.time.LocalDate;
 
-import lombok.*;
-
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Builder
-public class FermeResponseLight {
-    private Double age;
+public class ArbreResponseLight {
     private LocalDate datePlantation;
+    private Double age;
 } 
