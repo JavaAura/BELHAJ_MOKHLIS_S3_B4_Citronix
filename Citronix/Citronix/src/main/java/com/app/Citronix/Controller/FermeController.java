@@ -9,10 +9,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.app.Citronix.Exception.FermeException;
 import com.app.Citronix.Model.DTO.Request.FermeRequest;
 import com.app.Citronix.Model.DTO.Response.FermeResponse;
 import com.app.Citronix.Service.FermeService;
@@ -25,15 +27,16 @@ public class FermeController {
     private FermeService fermeService;
 
     @PostMapping
-    public ResponseEntity<FermeResponse> createFerme(@Valid @RequestBody FermeRequest request) {    	
-        return ResponseEntity.ok(fermeService.saveFerme(request));
+public ResponseEntity<FermeResponse> createFerme(@Valid @RequestBody FermeRequest request) throws FermeException { 
+        FermeResponse savedFerme = fermeService.saveFerme(request);
+        return ResponseEntity.status(HttpStatus.CREATED).body(savedFerme);
     }
     
     @GetMapping("/{id}")
     public ResponseEntity<FermeResponse> getFermeById(@PathVariable Long id) {
         FermeResponse ferme = fermeService.getFermeById(id);
         if (ferme == null) {
-            throw new RuntimeException("Ferme not found with id: " + id);
+            throw new FermeException("Ferme not found with id: " + id);
         }
         return ResponseEntity.ok(ferme);
     }
@@ -47,17 +50,17 @@ public class FermeController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<FermeResponse> updateFerme(@PathVariable Long id, @Valid @RequestBody FermeRequest request) {
+    public ResponseEntity<FermeResponse> updateFerme(@PathVariable Long id, @Valid @RequestBody FermeRequest request) throws FermeException {
+        
         return ResponseEntity.ok(fermeService.updateFerme(id, request));
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteFerme(@PathVariable Long id) {
         if (!fermeService.deleteFerme(id)) {
-            throw new RuntimeException("Ferme not found with id: " + id);
-        }else{
-            return ResponseEntity.noContent().build();
+            throw new FermeException("Ferme not found with id: " + id);
         }
+        return ResponseEntity.noContent().build();
     }
 
     @GetMapping("/search")

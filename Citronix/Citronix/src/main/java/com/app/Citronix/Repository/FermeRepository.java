@@ -5,6 +5,6 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 
 import com.app.Citronix.Model.Entity.Ferme;
 
-public interface FarmRepository extends JpaRepository<Ferme, Long>, JpaSpecificationExecutor<Ferme> {
+public interface FermeRepository extends JpaRepository<Ferme, Long>, JpaSpecificationExecutor<Ferme> {
     
 }

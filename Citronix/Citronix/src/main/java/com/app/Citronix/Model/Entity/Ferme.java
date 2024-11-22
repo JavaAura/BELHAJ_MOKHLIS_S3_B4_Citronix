@@ -34,7 +34,7 @@ public class Ferme {
     @Column(nullable = false)
     @NotNull(message = "La superficie est obligatoire")
     @Positive(message = "La superficie doit être supérieure à 0")
-    @DecimalMin(value = "0.1", message = "La superficie minimale d'un champ doit être de 0.1 hectare")
+    @DecimalMin(value = "2", message = "La superficie minimale d'une ferme doit être de 2 hectares")
     private Double superficie;
     @Column(name = "date_creation")
     @PastOrPresent(message = "La date de création ne peut pas être dans le futur")

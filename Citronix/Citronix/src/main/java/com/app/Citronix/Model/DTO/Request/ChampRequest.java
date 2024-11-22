@@ -1,6 +1,7 @@
 package com.app.Citronix.Model.DTO.Request;
 
 import lombok.*;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
