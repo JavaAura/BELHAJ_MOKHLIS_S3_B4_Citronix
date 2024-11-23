@@ -51,6 +51,8 @@ public class ChampService {
     }
 
     public ChampResponse updateChamp(Integer id, ChampRequest champRequest) {
+        champRequest.setId(id);
+        champRequest = champValidation.validateUpdateChampRequest(champRequest);
         Optional<Champ> champOpt = champRepository.findById(id);
         if (champOpt.isPresent()) {
             Champ champ = champOpt.get();

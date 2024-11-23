@@ -6,6 +6,9 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
+
+import com.app.Citronix.Model.Enum.EtatArbre;
+
 import java.time.LocalDate;
 
 @Entity
@@ -25,8 +28,45 @@ public class Arbre {
 
     @Transient
     private long age;
+
+    @Transient
+    private EtatArbre etatArbre;
+
+    @Transient
+    private double production;
+
     @ManyToOne
     @JoinColumn(name = "champ_id")
     @NotNull(message = "Le champ est obligatoire")
     private Champ champ;
+
+    @PostLoad
+    @PrePersist
+    private void calculateAgeAndSetEtatArbreAndCalculeProduction() {
+        if (this.datePlantation != null) {
+            this.age = java.time.temporal.ChronoUnit.YEARS.between(
+                this.datePlantation, 
+                LocalDate.now()
+            );
+        }
+       if( this.age >= 1 && this.age < 3) {
+        this.etatArbre = EtatArbre.JEUNE;
+        this.production = 2.5;
+       } else if(this.age >= 3 && this.age <= 10) {
+        this.etatArbre = EtatArbre.MATURE;
+        this.production = 12;
+       } else if(this.age > 10 && this.age <= 20) {
+        this.etatArbre = EtatArbre.VIEUX;
+        this.production = 20;
+       } else {
+        this.etatArbre = EtatArbre.NON_PRODUCTIF;
+        this.production = 0;
+       }
+
+
+    }
+
+  
+
+  
 } 
