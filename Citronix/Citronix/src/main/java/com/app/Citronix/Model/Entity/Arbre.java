@@ -23,10 +23,8 @@ public class Arbre {
     @PastOrPresent(message = "La date de plantation ne peut pas être dans le futur")
     private LocalDate datePlantation;
 
-    @Column(nullable = false)
-    @NotNull(message = "L'âge est obligatoire")
-    @PositiveOrZero(message = "L'âge doit être positif ou zéro")
-    private Double age;
+    @Transient
+    private long age;
 
     @ManyToOne
     @JoinColumn(name = "champ_id")
