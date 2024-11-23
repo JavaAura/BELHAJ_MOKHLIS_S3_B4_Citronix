@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 import javax.persistence.*;
 import javax.validation.constraints.*;
 
@@ -28,4 +30,8 @@ public class Champ {
     @ManyToOne
     @JoinColumn(name = "ferme_id")
     private Ferme ferme;
+
+    @OneToMany(mappedBy = "champ")
+    private List<Arbre> arbres;
+    
 }
