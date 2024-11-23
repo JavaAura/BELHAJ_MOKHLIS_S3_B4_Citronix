@@ -40,6 +40,6 @@ public class Ferme {
     @PastOrPresent(message = "La date de création ne peut pas être dans le futur")
     private LocalDate dateCreation;
 
-    @OneToMany(mappedBy = "ferme")
+    @OneToMany(mappedBy = "ferme", cascade = CascadeType.REMOVE)
     private List<Champ> champs;
 } 

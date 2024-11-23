@@ -17,6 +17,6 @@ public interface FermeMapper {
     @Mapping(target = "champs", source = "champs")
     FermeResponse toResponse(Ferme ferme);
 
-    @Named("toResponseLight")
+    @Named("toResponseLightFerme")
     FermeResponseLight toResponseLight(Ferme ferme);
 }

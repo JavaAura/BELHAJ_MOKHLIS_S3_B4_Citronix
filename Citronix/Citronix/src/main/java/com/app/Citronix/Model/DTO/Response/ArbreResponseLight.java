@@ -9,5 +9,5 @@ import java.time.LocalDate;
 @Builder
 public class ArbreResponseLight {
     private LocalDate datePlantation;
-    private Double age;
+    private long age;
 } 

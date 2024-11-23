@@ -30,8 +30,7 @@ public class Champ {
     @ManyToOne
     @JoinColumn(name = "ferme_id")
     private Ferme ferme;
-
-    @OneToMany(mappedBy = "champ")
+    @OneToMany(mappedBy = "champ", cascade = CascadeType.REMOVE)
     private List<Arbre> arbres;
     
 }
