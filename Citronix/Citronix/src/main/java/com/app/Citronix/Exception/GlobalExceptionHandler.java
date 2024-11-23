@@ -27,10 +27,20 @@ public class GlobalExceptionHandler {
     public ResponseEntity<ErrorResponse> handleFermeException(FermeException ex) {
         ErrorResponse errorResponse = new ErrorResponse(
             ex.getMessage(), 
-            HttpStatus.NOT_FOUND.value()
+            HttpStatus.BAD_REQUEST.value()
         );
-        return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST);
     }
+    
+    @ExceptionHandler(ArbreException.class)
+    public ResponseEntity<ErrorResponse> handleArbreException(ArbreException ex) {
+        ErrorResponse errorResponse = new ErrorResponse(
+            ex.getMessage(), 
+            HttpStatus.BAD_REQUEST.value()
+        );
+        return new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST);
+    }
+    
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<ErrorResponse> handleValidationException(MethodArgumentNotValidException ex) {
         List<String> errors = ex.getBindingResult()
@@ -40,7 +50,7 @@ public class GlobalExceptionHandler {
             .collect(Collectors.toList());
             
         ErrorResponse errorResponse = new ErrorResponse(
-            "Validation failed: " + String.join(", ", errors),
+            "Validation échouée: " + String.join(", ", errors),
             HttpStatus.BAD_REQUEST.value()
         );
         return new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST);
@@ -54,7 +64,7 @@ public class GlobalExceptionHandler {
             .collect(Collectors.toList());
 
         ErrorResponse errorResponse = new ErrorResponse(
-            "Validation failed: " + String.join(", ", errors),
+            "Validation échouée: " + String.join(", ", errors),
             HttpStatus.BAD_REQUEST.value()
         );
         return new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST);

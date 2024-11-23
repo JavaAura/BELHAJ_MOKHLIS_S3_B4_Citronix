@@ -36,7 +36,7 @@ public ResponseEntity<FermeResponse> createFerme(@Valid @RequestBody FermeReques
     public ResponseEntity<FermeResponse> getFermeById(@PathVariable Long id) {
         FermeResponse ferme = fermeService.getFermeById(id);
         if (ferme == null) {
-            throw new FermeException("Ferme not found with id: " + id);
+            throw new FermeException("Ferme non trouvé avec l'id: " + id);
         }
         return ResponseEntity.ok(ferme);
     }
@@ -58,7 +58,7 @@ public ResponseEntity<FermeResponse> createFerme(@Valid @RequestBody FermeReques
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteFerme(@PathVariable Long id) {
         if (!fermeService.deleteFerme(id)) {
-            throw new FermeException("Ferme not found with id: " + id);
+            throw new FermeException("Ferme non trouvé avec l'id: " + id);
         }
         return ResponseEntity.noContent().build();
     }

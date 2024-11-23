@@ -61,7 +61,7 @@ public class FermeService {
 
     private void validateUpdateFerme(FermeRequest fermeRequest) {
         Ferme ferme = fermeRepository.findById(fermeRequest.getId())
-                .orElseThrow(() -> new RuntimeException("Ferme not found"));
+                .orElseThrow(() -> new FermeException("Ferme non trouvé avec l'id: " + fermeRequest.getId()));
         double totalSuperficieChamps = totalSuperficieChamps(fermeRequest.getId());
         if (fermeRequest.getSuperficie() <= totalSuperficieChamps) {
             throw new FermeException("ferme ne peut soit moins du totale des superficies des  champs "+totalSuperficieChamps+"hectares");
@@ -110,7 +110,7 @@ public class FermeService {
 
     public double totalSuperficieChamps (Long id) {
         Ferme ferme = fermeRepository.findById(id)
-        .orElseThrow(() -> new FermeException("Ferme not found"));
+        .orElseThrow(() -> new FermeException("Ferme non trouvé avec l'id: " + id));
         double totalSuperficie = 0;
         for (Champ champ : ferme.getChamps()) {
             totalSuperficie += champ.getSuperficie();

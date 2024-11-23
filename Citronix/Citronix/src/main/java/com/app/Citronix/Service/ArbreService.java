@@ -5,6 +5,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import com.app.Citronix.Exception.ArbreException;
 import com.app.Citronix.Exception.ChampException;
 import com.app.Citronix.Model.DTO.Request.ArbreRequest;
 import com.app.Citronix.Model.DTO.Response.ArbreResponse;
@@ -13,6 +14,7 @@ import com.app.Citronix.Model.Entity.Champ;
 import com.app.Citronix.Model.Mapper.ArbreMapper;
 import com.app.Citronix.Repository.ArbreRepository;
 import com.app.Citronix.Repository.ChampRepository;
+import com.app.Citronix.Validation.ArbreValidation;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
@@ -29,26 +31,15 @@ public class ArbreService {
     
     @Autowired
     private ArbreMapper arbreMapper;
+    
+    @Autowired
+    private ArbreValidation arbreValidation;
 
     public ArbreResponse save(ArbreRequest arbreRequest) {
-        LocalDate datePlantation = arbreRequest.getDatePlantation();
-        int mois = datePlantation.getMonthValue();
-        if (mois < 3 || mois > 5) {
-            throw new IllegalArgumentException("La plantation n'est autorisée qu'entre mars et mai");
-        }
-
+        arbreValidation.validateArbreRequest(arbreRequest);
         Optional<Champ> champ = champRepository.findById(arbreRequest.getChamp().getId());
-        if (champ.isPresent()) {
-            double superficie = champ.get().getSuperficie(); // en hectare
-            long nbArbres = champ.get().getArbres().size();
-            if (nbArbres >= (superficie * 100)) { // 100 arbre pour 1 hectare
-                throw new IllegalStateException("Densité maximale atteinte pour ce champ");
-            }
-        } else {
-            throw new ChampException("Champ non trouvé");
-        }
-
         Arbre arbre = arbreMapper.toEntity(arbreRequest);
+        arbre.setChamp(champ.get());
         arbre = arbreRepository.save(arbre);
         return arbreMapper.toResponse(arbre);
     }
@@ -56,17 +47,15 @@ public class ArbreService {
     public Page<ArbreResponse> findAll(Pageable pageable) {
         Page<Arbre> arbres = arbreRepository.findAll(pageable);
         return arbres.map(arbre -> {
-            arbre.setAge(calculerAge(arbre));
             return arbreMapper.toResponse(arbre);
         });
     }
 
-    public Optional<ArbreResponse> findById(Long id) {
-        Optional<Arbre> arbre = arbreRepository.findById(id);
-        if (arbre.isPresent()) {
-            arbre.get().setAge(calculerAge(arbre.get()));
-        }
-        return arbre.map(arbreMapper::toResponse);
+    public ArbreResponse findById(Long id) {
+        Arbre arbre = arbreRepository.findById(id)
+        .orElseThrow(() -> new ArbreException("Arbre non trouvé avec l'id: " + id));
+     
+        return arbreMapper.toResponse(arbre);
     }
     public boolean deleteById(Long id) {
         Optional<Arbre> arbre = arbreRepository.findById(id);
@@ -79,7 +68,5 @@ public class ArbreService {
 
 
 
-    public long calculerAge(Arbre arbre) {
-        return ChronoUnit.YEARS.between(arbre.getDatePlantation(), LocalDate.now());
-    }
+ 
 } 
