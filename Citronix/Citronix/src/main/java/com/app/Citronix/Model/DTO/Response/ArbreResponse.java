@@ -13,6 +13,6 @@ import java.time.LocalDate;
 @Builder
 public class ArbreResponse {
     private LocalDate datePlantation;
-    private Double age;
+    private long age;
     private ChampResponseLight champ;
 } 

@@ -1,6 +1,7 @@
 package com.app.Citronix.Model.DTO.Response;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import lombok.*;
 
@@ -9,6 +10,8 @@ import lombok.*;
 @NoArgsConstructor
 @Builder
 public class FermeResponseLight {
-    private Double age;
-    private LocalDate datePlantation;
+	   private String nom;
+	    private String adress;
+	    private Double superficie;
+	    private LocalDate dateCreation;
 } 

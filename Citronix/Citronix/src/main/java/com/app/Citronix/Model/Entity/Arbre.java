@@ -25,7 +25,6 @@ public class Arbre {
 
     @Transient
     private long age;
-
     @ManyToOne
     @JoinColumn(name = "champ_id")
     @NotNull(message = "Le champ est obligatoire")
