@@ -45,5 +45,11 @@ public class Recolte {
             this.saison = Saison.HIVER;
         }
     }
+
+    @PrePersist
+    @PostLoad
+    private void calculateTotalQuantite() {
+        this.totalQuantite = this.detailRecoltes.stream().mapToDouble(DetailRecolte::getQuantite).sum();
+    }
 }
 
