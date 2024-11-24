@@ -3,7 +3,6 @@ package com.app.Citronix.Model.DTO.Request;
 import java.time.LocalDate;
 
 import lombok.*;
-import javax.validation.constraints.*;
 
 @Data
 @AllArgsConstructor
