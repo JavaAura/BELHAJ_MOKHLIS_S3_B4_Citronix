@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 import javax.persistence.*;
 import javax.validation.constraints.*;
 
@@ -39,6 +41,9 @@ public class Arbre {
     @JoinColumn(name = "champ_id")
     @NotNull(message = "Le champ est obligatoire")
     private Champ champ;
+
+    @OneToMany(mappedBy = "arbre")
+    private List<DetailRecolte> detailRecoltes;
 
     @PostLoad
     @PrePersist

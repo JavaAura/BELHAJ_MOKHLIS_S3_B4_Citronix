@@ -18,6 +18,6 @@ public interface ChampMapper {
     @Mapping(target="arbres",source="arbres")
     ChampResponse toResponse(Champ champ);
 
-    @Named("toResponseLight")
+    @Named("toResponseLightChamp")
     ChampResponseLight toResponseLight(Champ champ);
 } 
