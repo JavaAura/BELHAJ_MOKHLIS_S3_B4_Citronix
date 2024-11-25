@@ -46,7 +46,7 @@ public class ChampValidation {
     }
 
     private void validateFermeExists(ChampRequest champRequest) {
-        if (champRequest.getFerme().getId() == null) {
+        if (champRequest.getFerme() == null) {
             throw new ChampException("Ferme est obligatoire");
         }
     }
@@ -87,7 +87,7 @@ public class ChampValidation {
         }
     }
 
-    public void existChamp(Integer champId) {
+    public void existChamp(Long champId) {
         Optional<Champ> champ = champRepository.findById(champId);
         if (!champ.isPresent()) {
             throw new ChampException("Champ non trouvé avec l'id: " + champId);

@@ -37,7 +37,7 @@ public class ArbreService {
 
     public ArbreResponse save(ArbreRequest arbreRequest) {
         arbreValidation.validateArbreRequest(arbreRequest);
-        Optional<Champ> champ = champRepository.findById(arbreRequest.getChamp().getId());
+        Optional<Champ> champ = champRepository.findById( arbreRequest.getChamp().getId());
         Arbre arbre = arbreMapper.toEntity(arbreRequest);
         arbre.setChamp(champ.get());
         arbre = arbreRepository.save(arbre);

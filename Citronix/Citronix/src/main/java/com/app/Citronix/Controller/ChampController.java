@@ -28,9 +28,6 @@ public class ChampController {
     @GetMapping("/{id}")
     public ResponseEntity<ChampResponse> getChampById(@PathVariable Integer id) {
         ChampResponse champ = champService.getChampById(id);
-        if (champ == null) {
-            return ResponseEntity.notFound().build();
-        }
         return ResponseEntity.ok(champ);
     }
 
@@ -44,7 +41,7 @@ public class ChampController {
 
     @PutMapping("/{id}")
     public ResponseEntity<ChampResponse> updateChamp(
-            @PathVariable Integer id,
+            @PathVariable Long id,
             @Valid @RequestBody ChampRequest request) {
         ChampResponse updatedChamp = champService.updateChamp(id, request);
         if (updatedChamp == null) {
@@ -54,7 +51,7 @@ public class ChampController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteChamp(@PathVariable Integer id) {
+    public ResponseEntity<Void> deleteChamp(@PathVariable Long id) {
         if (champService.deleteChamp(id)) {
             return ResponseEntity.noContent().build();
         }
