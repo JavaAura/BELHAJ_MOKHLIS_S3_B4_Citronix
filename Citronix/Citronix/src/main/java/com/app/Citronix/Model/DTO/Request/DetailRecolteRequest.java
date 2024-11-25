@@ -9,7 +9,7 @@ import javax.validation.constraints.Min;
 @AllArgsConstructor
 @Builder
 public class DetailRecolteRequest {
-    private int id;
+    private Long id;
     
     @Min(value = 0, message = "La quantité doit être supérieure à 0")
     private Double quantite;

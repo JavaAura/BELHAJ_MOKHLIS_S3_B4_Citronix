@@ -15,5 +15,4 @@ import java.time.LocalDate;
 public class RecolteResponseLight {
     private LocalDate dateRecolte;
     private Saison saison;
-    private Double totalQuantite;
 } 

@@ -12,11 +12,12 @@ import com.app.Citronix.Model.Entity.Arbre;
 @Mapper(componentModel = "spring", uses = {ChampMapper.class})
 public interface ArbreMapper {
     
+
     Arbre toEntity(ArbreRequest arbreRequest);
     
     @Mapping(target = "champ", source = "champ", qualifiedByName = "toResponseLightChamp")
     ArbreResponse toResponse(Arbre arbre);
 
-    @Named("toResponseLightArbre")
+    @Named("toResponseLight")
     ArbreResponseLight toResponseLight(Arbre arbre);
 } 

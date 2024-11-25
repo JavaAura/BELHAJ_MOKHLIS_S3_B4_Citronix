@@ -5,6 +5,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import com.app.Citronix.Exception.ChampException;
 import com.app.Citronix.Model.DTO.Request.ChampRequest;
 import com.app.Citronix.Model.DTO.Response.ChampResponse;
 import com.app.Citronix.Model.Entity.Champ;
@@ -37,7 +38,7 @@ public class ChampService {
         Ferme ferme = fermeRepository.findById(champRequest.getFerme().getId()).orElse(null);
         champ.setFerme(ferme);
         champ = champRepository.save(champ);
-        return getChampById(champ.getId());
+        return getChampById( champ.getId());
     }
 
     public Page<ChampResponse> getAllChamps(Pageable pageable) {
@@ -45,12 +46,16 @@ public class ChampService {
         return champs.map(champMapper::toResponse);
     }
 
-    public ChampResponse getChampById(Integer id) {
+    public ChampResponse getChampById(long id) {
         Optional<Champ> champ = champRepository.findById(id);
-        return champ.map(champMapper::toResponse).orElse(null);
+        if (champ.isPresent()) {
+            return champMapper.toResponse(champ.get());
+        } else {
+            throw new ChampException("Champ non trouvé avec l'id : " + id);
+        }
     }
 
-    public ChampResponse updateChamp(Integer id, ChampRequest champRequest) {
+    public ChampResponse updateChamp(Long id, ChampRequest champRequest) {
         champRequest.setId(id);
         champRequest = champValidation.validateUpdateChampRequest(champRequest);
         Optional<Champ> champOpt = champRepository.findById(id);
@@ -64,7 +69,7 @@ public class ChampService {
         return null;
     }
 
-    public boolean deleteChamp(Integer id) {
+    public boolean deleteChamp(Long id) {
         Optional<Champ> champ = champRepository.findById(id);
         if (champ.isPresent()) {
             champRepository.delete(champ.get());

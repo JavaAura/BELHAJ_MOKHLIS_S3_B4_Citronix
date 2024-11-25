@@ -11,17 +11,17 @@ import lombok.Data;
 public class DetailRecolte {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     @Min(value = 0, message = "La quantité doit être supérieure à 0")
     @Column(nullable = false)
     private Double quantite;
 
     @ManyToOne
-    @JoinColumn(name = "arbre_id", insertable = false, updatable = false)
+    @JoinColumn(name = "arbre_id", updatable = false)
     private Arbre arbre;
 
     @ManyToOne
-    @JoinColumn(name = "recolte_id", insertable = false, updatable = false)
+    @JoinColumn(name = "recolte_id", updatable = false)
     private Recolte recolte;
 }

@@ -28,7 +28,7 @@ public class ArbreValidation {
         }
     }
 
-    private void validateChampDensity(Integer champId) {
+    private void validateChampDensity(Long champId) {
         Optional<Champ> champ = champRepository.findById(champId);
         
         if (champ.isPresent()) {

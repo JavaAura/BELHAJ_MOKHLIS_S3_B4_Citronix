@@ -40,6 +40,24 @@ public class GlobalExceptionHandler {
         );
         return new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST);
     }
+
+    @ExceptionHandler(RecolteException.class)
+    public ResponseEntity<ErrorResponse> handleRecolteException(RecolteException ex) {
+        ErrorResponse errorResponse = new ErrorResponse(
+            ex.getMessage(), 
+            HttpStatus.BAD_REQUEST.value()
+        );
+        return new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler(RecolteDetailException.class)
+    public ResponseEntity<ErrorResponse> handleRecolteDetailException(RecolteDetailException ex){
+        ErrorResponse errorResponse = new ErrorResponse(
+            ex.getMessage(),
+            HttpStatus.BAD_REQUEST.value()
+            );
+            return new ResponseEntity<>(errorResponse,HttpStatus.BAD_REQUEST);
+    }
     
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<ErrorResponse> handleValidationException(MethodArgumentNotValidException ex) {

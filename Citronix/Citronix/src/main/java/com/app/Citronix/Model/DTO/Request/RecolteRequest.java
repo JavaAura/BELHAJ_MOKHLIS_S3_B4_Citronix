@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.PostLoad;
 import javax.persistence.PrePersist;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.PastOrPresent;
 
@@ -19,14 +20,16 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @Builder
 public class RecolteRequest {
-    private int id;
+    
+    private Long id;
     
     @NotNull(message = "La date de récolte est obligatoire")
     @PastOrPresent(message = "La date de récolte ne peut pas être dans le futur")
     private LocalDate dateRecolte;
 
     private Saison saison;
-    
+
+    @Min(value = 0, message = "La quantité totale doit être supérieure à 0")
     private Double totalQuantite;
 
     @PrePersist

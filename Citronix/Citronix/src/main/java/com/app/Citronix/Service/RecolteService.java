@@ -6,12 +6,15 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
 
+import com.app.Citronix.Exception.RecolteException;
 import com.app.Citronix.Model.DTO.Response.RecolteResponse;
 import com.app.Citronix.Model.Entity.Recolte;
 import com.app.Citronix.Model.Mapper.RecolteMapper;
 import com.app.Citronix.Repository.RecolteRepository;
 
+@Service
 public class RecolteService {
 
     @Autowired
@@ -24,10 +27,10 @@ public class RecolteService {
         return recolteRepository.findAll(pageable).map(recolteMapper::toResponse);
     }
 
-    public RecolteResponse getRecolteById(Integer id) {
+    public RecolteResponse getRecolteById(Long id) {
         Recolte recolte = recolteRepository.findById(id).orElse(null);
         if (recolte == null) {
-            throw new RuntimeException("recolte non trouve");
+            throw new RecolteException("Recolte non trouvée");
         }
         return recolteMapper.toResponse(recolte);
     }

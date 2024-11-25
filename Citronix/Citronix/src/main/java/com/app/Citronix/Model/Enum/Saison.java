@@ -4,5 +4,10 @@ public enum Saison {
     PRINTEMPS,
     ETE,
     AUTOMNE,
-    HIVER
+    HIVER;
+
+        @Override
+        public String toString() {
+            return name().toLowerCase();
+        }
 }
