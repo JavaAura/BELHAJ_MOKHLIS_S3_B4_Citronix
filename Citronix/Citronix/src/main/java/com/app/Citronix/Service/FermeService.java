@@ -6,9 +6,10 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.*;
 import org.springframework.data.jpa.domain.Specification;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
-import com.app.Citronix.Exception.FermeException;
+import com.app.Citronix.Exception.ResponseException;
 import com.app.Citronix.Model.DTO.Request.FermeRequest;
 import com.app.Citronix.Model.DTO.Response.FermeResponse;
 import com.app.Citronix.Model.Entity.Champ;
@@ -61,17 +62,17 @@ public class FermeService {
 
     private void validateUpdateFerme(FermeRequest fermeRequest) {
         Ferme ferme = fermeRepository.findById(fermeRequest.getId())
-                .orElseThrow(() -> new FermeException("Ferme non trouvé avec l'id: " + fermeRequest.getId()));
+                .orElseThrow(() -> new ResponseException("Ferme non trouvé avec l'id: " + fermeRequest.getId(),HttpStatus.NOT_FOUND));
         double totalSuperficieChamps = totalSuperficieChamps(fermeRequest.getId());
         if (fermeRequest.getSuperficie() <= totalSuperficieChamps) {
-            throw new FermeException("ferme ne peut soit moins du totale des superficies des  champs "+totalSuperficieChamps+"hectares");
+            throw new ResponseException("ferme ne peut soit moins du totale des superficies des  champs "+totalSuperficieChamps+"hectares",HttpStatus.BAD_REQUEST);
         }
     }
 
     public boolean deleteFerme(Long id) {
         Optional<Ferme> ferme = fermeRepository.findById(id);
         if (ferme.get().getChamps().stream().anyMatch(champ -> champ.getArbres().stream().anyMatch(arbre -> arbre.getDetailRecoltes().size() > 0))) {
-            throw new FermeException("Impossible de supprimer la ferme car elle a des champs avec des arbres avec des recoltes");
+                throw new ResponseException("Impossible de supprimer la ferme car elle a des champs avec des arbres avec des recoltes",HttpStatus.BAD_REQUEST);
         }
         if (ferme.isPresent()) {
             fermeRepository.delete(ferme.get());
@@ -113,7 +114,7 @@ public class FermeService {
 
     public double totalSuperficieChamps (Long id) {
         Ferme ferme = fermeRepository.findById(id)
-        .orElseThrow(() -> new FermeException("Ferme non trouvé avec l'id: " + id));
+        .orElseThrow(() -> new ResponseException("Ferme non trouvé avec l'id: " + id, HttpStatus.NOT_FOUND));
         double totalSuperficie = 0;
         for (Champ champ : ferme.getChamps()) {
             totalSuperficie += champ.getSuperficie();

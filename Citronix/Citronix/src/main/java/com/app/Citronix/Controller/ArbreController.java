@@ -1,6 +1,6 @@
 package com.app.Citronix.Controller;
 
-import com.app.Citronix.Exception.ArbreException;
+import com.app.Citronix.Exception.ResponseException;
 import com.app.Citronix.Model.DTO.Request.ArbreRequest;
 import com.app.Citronix.Model.DTO.Response.ArbreResponse;
 import com.app.Citronix.Service.ArbreService;
@@ -10,6 +10,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.*;
 import org.springframework.data.web.PageableDefault;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -49,7 +50,7 @@ public class ArbreController {
             return ResponseEntity.noContent().build();
         }
         
-        throw new ArbreException("Arbre non trouvé avec l'id: " + id);
+        throw new ResponseException("Arbre non trouvé avec l'id: " + id, HttpStatus.NOT_FOUND);
     }
 
 }

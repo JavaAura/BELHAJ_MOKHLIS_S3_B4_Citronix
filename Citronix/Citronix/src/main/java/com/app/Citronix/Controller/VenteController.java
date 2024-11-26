@@ -1,9 +1,11 @@
 package com.app.Citronix.Controller;
 
+import com.app.Citronix.Exception.ResponseException;
 import com.app.Citronix.Model.DTO.Request.VenteRequest;
 import com.app.Citronix.Model.DTO.Response.VenteResponse;
 import com.app.Citronix.Service.VenteService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,7 +27,7 @@ public class VenteController {
         public ResponseEntity<VenteResponse> getVenteById(@PathVariable Long id) {
         return venteService.getVenteById(id)
                 .map(ResponseEntity::ok)
-                .orElse(ResponseEntity.notFound().build());
+                .orElseThrow(() -> new ResponseException("Vente non trouvé avec l'id: " + id, HttpStatus.NOT_FOUND));
     }
     
     @PostMapping
@@ -37,13 +39,14 @@ public class VenteController {
     public ResponseEntity<VenteResponse> updateVente(@PathVariable Long id, @RequestBody VenteRequest venteRequest) {
         return venteService.updateVente(id, venteRequest)
                 .map(ResponseEntity::ok)
-                .orElse(ResponseEntity.notFound().build());
+                .orElseThrow(() -> new ResponseException("Vente non trouvé avec l'id: " + id, HttpStatus.NOT_FOUND));
     }
     
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteVente(@PathVariable Long id) {
-        return venteService.deleteVente(id)
-                ? ResponseEntity.ok().build()
-                : ResponseEntity.notFound().build();
+        if (venteService.deleteVente(id)) {
+            return ResponseEntity.ok().build();
+        }
+        throw new ResponseException("Vente non trouvé avec l'id: " + id, HttpStatus.NOT_FOUND);
     }
 }

@@ -14,50 +14,15 @@ import javax.validation.ConstraintViolationException;
 @ControllerAdvice
 public class GlobalExceptionHandler {
 
-    @ExceptionHandler(ChampException.class)
-    public ResponseEntity<ErrorResponse> handleChampException(ChampException ex) {
+    @ExceptionHandler(ResponseException.class)
+    public ResponseEntity<ErrorResponse> handleResponseException(ResponseException ex) {
         ErrorResponse errorResponse = new ErrorResponse(
             ex.getMessage(), 
-            HttpStatus.BAD_REQUEST.value()
+            ex.getStatus().value()
         );
-        return new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST);
+        return new ResponseEntity<>(errorResponse, ex.getStatus());
     }
 
-    @ExceptionHandler(FermeException.class)
-    public ResponseEntity<ErrorResponse> handleFermeException(FermeException ex) {
-        ErrorResponse errorResponse = new ErrorResponse(
-            ex.getMessage(), 
-            HttpStatus.BAD_REQUEST.value()
-        );
-        return new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST);
-    }
-    
-    @ExceptionHandler(ArbreException.class)
-    public ResponseEntity<ErrorResponse> handleArbreException(ArbreException ex) {
-        ErrorResponse errorResponse = new ErrorResponse(
-            ex.getMessage(), 
-            HttpStatus.BAD_REQUEST.value()
-        );
-        return new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST);
-    }
-
-    @ExceptionHandler(RecolteException.class)
-    public ResponseEntity<ErrorResponse> handleRecolteException(RecolteException ex) {
-        ErrorResponse errorResponse = new ErrorResponse(
-            ex.getMessage(), 
-            HttpStatus.BAD_REQUEST.value()
-        );
-        return new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST);
-    }
-
-    @ExceptionHandler(RecolteDetailException.class)
-    public ResponseEntity<ErrorResponse> handleRecolteDetailException(RecolteDetailException ex){
-        ErrorResponse errorResponse = new ErrorResponse(
-            ex.getMessage(),
-            HttpStatus.BAD_REQUEST.value()
-            );
-            return new ResponseEntity<>(errorResponse,HttpStatus.BAD_REQUEST);
-    }
     
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<ErrorResponse> handleValidationException(MethodArgumentNotValidException ex) {

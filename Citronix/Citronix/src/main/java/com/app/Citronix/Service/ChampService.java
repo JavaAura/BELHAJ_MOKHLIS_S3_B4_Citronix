@@ -3,9 +3,10 @@ package com.app.Citronix.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
-import com.app.Citronix.Exception.ChampException;
+import com.app.Citronix.Exception.ResponseException;
 import com.app.Citronix.Model.DTO.Request.ChampRequest;
 import com.app.Citronix.Model.DTO.Response.ChampResponse;
 import com.app.Citronix.Model.Entity.Champ;
@@ -51,7 +52,7 @@ public class ChampService {
         if (champ.isPresent()) {
             return champMapper.toResponse(champ.get());
         } else {
-            throw new ChampException("Champ non trouvé avec l'id : " + id);
+            throw new ResponseException("Champ non trouvé avec l'id : " + id, HttpStatus.NOT_FOUND);
         }
     }
 
@@ -72,7 +73,7 @@ public class ChampService {
     public boolean deleteChamp(Long id) {
         Optional<Champ> champ = champRepository.findById(id);
         if (champ.get().getArbres().stream().anyMatch(arbre -> arbre.getDetailRecoltes().size() > 0)) {
-            throw new ChampException("Impossible de supprimer le champ car il a des arbres avec des recoltes");
+            throw new ResponseException("Impossible de supprimer le champ car il a des arbres avec des recoltes",HttpStatus.BAD_REQUEST);
         }
         if (champ.isPresent()) {
             champRepository.delete(champ.get());
