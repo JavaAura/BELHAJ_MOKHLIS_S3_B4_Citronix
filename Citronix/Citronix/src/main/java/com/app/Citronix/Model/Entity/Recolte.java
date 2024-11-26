@@ -39,7 +39,7 @@ public class Recolte {
     private List<DetailRecolte> detailRecoltes;
 
 
-    @OneToMany(mappedBy = "recolte" ,fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "recolte")
     private List<Vente> ventes;
 
     @PrePersist

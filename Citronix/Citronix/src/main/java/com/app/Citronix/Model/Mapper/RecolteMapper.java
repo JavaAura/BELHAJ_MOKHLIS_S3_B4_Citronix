@@ -15,6 +15,7 @@ public interface RecolteMapper {
     Recolte toEntity(RecolteRequest recolteRequest);
     
     @Mapping(target = "detailRecoltes", source = "detailRecoltes", qualifiedByName = "toResponseLight")
+    @Mapping(target = "ventes", source = "ventes")
     RecolteResponse toResponse(Recolte recolte);
 
 

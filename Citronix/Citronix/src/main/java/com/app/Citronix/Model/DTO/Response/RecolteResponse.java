@@ -19,4 +19,5 @@ public class RecolteResponse {
     private Double totalQuantite;
     private Double totalQuantiteRestante;
     private List<DetailRecolteResponseLight> detailRecoltes;
+    private List<VenteResponseLight> ventes;
 } 
