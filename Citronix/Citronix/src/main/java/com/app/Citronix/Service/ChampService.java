@@ -36,8 +36,12 @@ public class ChampService {
     public ChampResponse saveChamp(ChampRequest champRequest) { 
         champRequest = champValidation.validateChampRequest(champRequest);
         Champ champ = champMapper.toEntity(champRequest);
-        Ferme ferme = fermeRepository.findById(champRequest.getFerme().getId()).orElse(null);
-        champ.setFerme(ferme);
+        Optional<Ferme> ferme = fermeRepository.findById(champRequest.getFerme().getId()) ;
+        if (ferme.isPresent()) {
+            champ.setFerme(ferme.get());
+        } else {
+            throw new ResponseException("La ferme avec l'ID " + champRequest.getFerme().getId() + " n'existe pas.", HttpStatus.NOT_FOUND);
+        }
         champ = champRepository.save(champ);
         return getChampById( champ.getId());
     }
@@ -60,22 +64,22 @@ public class ChampService {
         champRequest.setId(id);
         champRequest = champValidation.validateUpdateChampRequest(champRequest);
         Optional<Champ> champOpt = champRepository.findById(id);
-        if (champOpt.isPresent()) {
+        if (!champOpt.isPresent()) {
+            throw new ResponseException("Champ non trouvé avec l'id : " + id, HttpStatus.NOT_FOUND);
+        }
             Champ champ = champOpt.get();
             champ.setNom(champRequest.getNom());
             champ.setSuperficie(champRequest.getSuperficie());
             champ = champRepository.save(champ);
             return champMapper.toResponse(champ);
-        }
-        return null;
     }
 
     public boolean deleteChamp(Long id) {
         Optional<Champ> champ = champRepository.findById(id);
-        if (champ.get().getArbres().stream().anyMatch(arbre -> arbre.getDetailRecoltes().size() > 0)) {
-            throw new ResponseException("Impossible de supprimer le champ car il a des arbres avec des recoltes",HttpStatus.BAD_REQUEST);
-        }
         if (champ.isPresent()) {
+            if (champ.get().getArbres() != null && champ.get().getArbres().stream().anyMatch(arbre -> arbre.getDetailRecoltes().size() > 0)) {
+                throw new ResponseException("Impossible de supprimer le champ car il a des arbres avec des recoltes",HttpStatus.BAD_REQUEST);
+            }
             champRepository.delete(champ.get());
             return true;
         }

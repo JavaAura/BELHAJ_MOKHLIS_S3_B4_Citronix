@@ -71,10 +71,10 @@ public class FermeService {
 
     public boolean deleteFerme(Long id) {
         Optional<Ferme> ferme = fermeRepository.findById(id);
-        if (ferme.get().getChamps().stream().anyMatch(champ -> champ.getArbres().stream().anyMatch(arbre -> arbre.getDetailRecoltes().size() > 0))) {
-                throw new ResponseException("Impossible de supprimer la ferme car elle a des champs avec des arbres avec des recoltes",HttpStatus.BAD_REQUEST);
-        }
         if (ferme.isPresent()) {
+            if (ferme.get().getChamps().stream().anyMatch(champ -> champ.getArbres().stream().anyMatch(arbre -> arbre.getDetailRecoltes().size() > 0))) {
+                    throw new ResponseException("Impossible de supprimer la ferme car elle a des champs avec des arbres avec des recoltes",HttpStatus.BAD_REQUEST);
+            }
             fermeRepository.delete(ferme.get());
             return true;
         } else {

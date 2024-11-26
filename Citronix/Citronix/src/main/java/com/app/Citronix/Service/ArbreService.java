@@ -59,10 +59,10 @@ public class ArbreService {
     }
     public boolean deleteById(Long id) {
         Optional<Arbre> arbre = arbreRepository.findById(id);
-        if (arbre.get().getDetailRecoltes().size() > 0) {
-            throw new ResponseException("Impossible de supprimer l'arbre car il a des recoltes",HttpStatus.BAD_REQUEST);
-        }
         if (arbre.isPresent()) {
+            if (arbre.get().getDetailRecoltes().size() > 0) {
+                throw new ResponseException("Impossible de supprimer l'arbre car il a des recoltes",HttpStatus.BAD_REQUEST);
+            }
             arbreRepository.delete(arbre.get());
             return true;
         }
