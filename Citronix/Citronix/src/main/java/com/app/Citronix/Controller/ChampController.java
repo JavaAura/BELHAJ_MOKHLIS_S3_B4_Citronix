@@ -9,7 +9,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import com.app.Citronix.Exception.ChampException;
+import org.springframework.http.HttpStatus;
+import com.app.Citronix.Exception.ResponseException;
 import com.app.Citronix.Model.DTO.Request.ChampRequest;
 import com.app.Citronix.Model.DTO.Response.ChampResponse;
 import com.app.Citronix.Service.ChampService;
@@ -55,6 +56,6 @@ public class ChampController {
         if (champService.deleteChamp(id)) {
             return ResponseEntity.noContent().build();
         }
-        throw new ChampException("Champ non trouvé avec l'id: " + id);
+        throw new ResponseException("Champ non trouvé avec l'id: " + id, HttpStatus.NOT_FOUND);
         }
 } 

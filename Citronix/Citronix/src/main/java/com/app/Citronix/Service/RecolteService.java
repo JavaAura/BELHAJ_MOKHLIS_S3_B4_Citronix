@@ -7,8 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-
-import com.app.Citronix.Exception.RecolteException;
+import org.springframework.http.HttpStatus;
+import com.app.Citronix.Exception.ResponseException;
 import com.app.Citronix.Model.DTO.Response.RecolteResponse;
 import com.app.Citronix.Model.Entity.Recolte;
 import com.app.Citronix.Model.Mapper.RecolteMapper;
@@ -30,7 +30,7 @@ public class RecolteService {
     public RecolteResponse getRecolteById(Long id) {
         Recolte recolte = recolteRepository.findById(id).orElse(null);
         if (recolte == null) {
-            throw new RecolteException("Recolte non trouvée");
+            throw new ResponseException("Recolte non trouvée", HttpStatus.NOT_FOUND);
         }
         return recolteMapper.toResponse(recolte);
     }

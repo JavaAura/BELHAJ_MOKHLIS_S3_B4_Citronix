@@ -1,10 +1,11 @@
 package com.app.Citronix.Validation;
 
-import com.app.Citronix.Exception.ChampException;
+import com.app.Citronix.Exception.ResponseException;
 import com.app.Citronix.Model.DTO.Request.ArbreRequest;
 import com.app.Citronix.Model.Entity.Champ;
 import com.app.Citronix.Repository.ChampRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
@@ -38,7 +39,7 @@ public class ArbreValidation {
                 throw new IllegalStateException("Densité maximale atteinte pour ce champ");
             }
         } else {
-            throw new ChampException("Champ non trouvé");
+            throw new ResponseException("Champ non trouvé", HttpStatus.NOT_FOUND);
         }
     }
 }

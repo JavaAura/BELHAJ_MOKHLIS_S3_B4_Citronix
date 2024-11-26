@@ -21,13 +21,13 @@ import javax.persistence.*;
 public class Vente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     @NotNull(message = "Le prix unitaire est requis")
     @Positive(message = "Le prix unitaire doit être positif")
     private Double prixUnitaire;
 
-    @NotBlank(message = "La date de vente est requise")
+    @NotNull(message = "La date de vente est requise")
     @PastOrPresent(message = "La date de vente ne peut pas être dans le futur")
     private LocalDate dateVente;
 
@@ -46,8 +46,10 @@ public class Vente {
     @JoinColumn(name = "recolte_id", nullable = false)
     private Recolte recolte;
     
-    public double calculateRevenu() {
-        return this.prixUnitaire * this.quantite;
+    @PrePersist
+    @PostPersist
+    public void calculateRevenu() {
+        this.revenu = this.prixUnitaire * this.quantite;
     }
 
    

@@ -9,9 +9,9 @@ import org.mapstruct.Mapping;
 @Mapper(componentModel = "spring",uses = {RecolteMapper.class})
 public interface VenteMapper {
 
-    Vente toEntity(VenteResponse venteResponse);
+    Vente toEntity(VenteRequest venteRequest);
     
     @Mapping(target = "recolte", source = "recolte")
-    VenteRequest toResponse(Vente vente);
+    VenteResponse toResponse(Vente vente);
     
 }

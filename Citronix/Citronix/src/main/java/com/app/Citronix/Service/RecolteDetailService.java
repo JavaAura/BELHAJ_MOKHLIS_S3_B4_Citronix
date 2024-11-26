@@ -1,7 +1,6 @@
 package com.app.Citronix.Service;
 
 import java.time.LocalDate;
-import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.domain.Pageable;
@@ -9,7 +8,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 
-import com.app.Citronix.Exception.RecolteDetailException;
 import com.app.Citronix.Model.DTO.Request.DetailRecolteRequest;
 import com.app.Citronix.Model.DTO.Response.DetailRecolteResponse;
 import com.app.Citronix.Model.Entity.Arbre;
@@ -33,11 +31,6 @@ public class RecolteDetailService {
     private RecolteRepository recolteRepository;
     @Autowired
     private DetailRecolteMapper detailRecolteMapper;
-
-    @Autowired
-    private ArbreRepository arbreRepository;
-
-    
     @Autowired
     private RecolteMapper recolteMapper;
 

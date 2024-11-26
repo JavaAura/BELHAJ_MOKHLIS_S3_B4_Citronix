@@ -3,10 +3,10 @@ package com.app.Citronix.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
-import com.app.Citronix.Exception.ArbreException;
-import com.app.Citronix.Exception.ChampException;
+import com.app.Citronix.Exception.ResponseException;
 import com.app.Citronix.Model.DTO.Request.ArbreRequest;
 import com.app.Citronix.Model.DTO.Response.ArbreResponse;
 import com.app.Citronix.Model.Entity.Arbre;
@@ -53,12 +53,15 @@ public class ArbreService {
 
     public ArbreResponse findById(Long id) {
         Arbre arbre = arbreRepository.findById(id)
-        .orElseThrow(() -> new ArbreException("Arbre non trouvé avec l'id: " + id));
+        .orElseThrow(() -> new ResponseException("Arbre non trouvé avec l'id: " + id,HttpStatus.NOT_FOUND));
      
         return arbreMapper.toResponse(arbre);
     }
     public boolean deleteById(Long id) {
         Optional<Arbre> arbre = arbreRepository.findById(id);
+        if (arbre.get().getDetailRecoltes().size() > 0) {
+            throw new ResponseException("Impossible de supprimer l'arbre car il a des recoltes",HttpStatus.BAD_REQUEST);
+        }
         if (arbre.isPresent()) {
             arbreRepository.delete(arbre.get());
             return true;

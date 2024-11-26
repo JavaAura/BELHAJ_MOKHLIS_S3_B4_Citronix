@@ -14,7 +14,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
-import com.app.Citronix.Exception.FermeException;
+import com.app.Citronix.Exception.ResponseException;
 import com.app.Citronix.Model.DTO.Request.FermeRequest;
 import com.app.Citronix.Model.DTO.Response.FermeResponse;
 import com.app.Citronix.Service.FermeService;
@@ -27,7 +27,7 @@ public class FermeController {
     private FermeService fermeService;
 
     @PostMapping
-public ResponseEntity<FermeResponse> createFerme(@Valid @RequestBody FermeRequest request) throws FermeException { 
+public ResponseEntity<FermeResponse> createFerme(@Valid @RequestBody FermeRequest request) throws ResponseException { 
         FermeResponse savedFerme = fermeService.saveFerme(request);
         return ResponseEntity.status(HttpStatus.CREATED).body(savedFerme);
     }
@@ -36,7 +36,7 @@ public ResponseEntity<FermeResponse> createFerme(@Valid @RequestBody FermeReques
     public ResponseEntity<FermeResponse> getFermeById(@PathVariable Long id) {
         FermeResponse ferme = fermeService.getFermeById(id);
         if (ferme == null) {
-            throw new FermeException("Ferme non trouvé avec l'id: " + id);
+            throw new ResponseException("Ferme non trouvé avec l'id: " + id, HttpStatus.NOT_FOUND);
         }
         return ResponseEntity.ok(ferme);
     }
@@ -50,7 +50,7 @@ public ResponseEntity<FermeResponse> createFerme(@Valid @RequestBody FermeReques
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<FermeResponse> updateFerme(@PathVariable Long id, @Valid @RequestBody FermeRequest request) throws FermeException {
+    public ResponseEntity<FermeResponse> updateFerme(@PathVariable Long id, @Valid @RequestBody FermeRequest request) throws ResponseException {
         
         return ResponseEntity.ok(fermeService.updateFerme(id, request));
     }
@@ -58,7 +58,7 @@ public ResponseEntity<FermeResponse> createFerme(@Valid @RequestBody FermeReques
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteFerme(@PathVariable Long id) {
         if (!fermeService.deleteFerme(id)) {
-            throw new FermeException("Ferme non trouvé avec l'id: " + id);
+            throw new ResponseException("Ferme non trouvé avec l'id: " + id, HttpStatus.NOT_FOUND);
         }
         return ResponseEntity.noContent().build();
     }
