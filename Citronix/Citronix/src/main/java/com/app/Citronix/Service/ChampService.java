@@ -71,6 +71,9 @@ public class ChampService {
 
     public boolean deleteChamp(Long id) {
         Optional<Champ> champ = champRepository.findById(id);
+        if (champ.get().getArbres().stream().anyMatch(arbre -> arbre.getDetailRecoltes().size() > 0)) {
+            throw new ChampException("Impossible de supprimer le champ car il a des arbres avec des recoltes");
+        }
         if (champ.isPresent()) {
             champRepository.delete(champ.get());
             return true;

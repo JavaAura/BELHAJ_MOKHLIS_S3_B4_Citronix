@@ -42,7 +42,7 @@ public class Arbre {
     @NotNull(message = "Le champ est obligatoire")
     private Champ champ;
 
-    @OneToMany(mappedBy = "arbre")
+    @OneToMany(mappedBy = "arbre", cascade = CascadeType.ALL)
     private List<DetailRecolte> detailRecoltes;
 
     @PostLoad

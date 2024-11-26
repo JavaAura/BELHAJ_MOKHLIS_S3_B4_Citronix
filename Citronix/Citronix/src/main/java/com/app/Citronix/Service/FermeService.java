@@ -70,6 +70,9 @@ public class FermeService {
 
     public boolean deleteFerme(Long id) {
         Optional<Ferme> ferme = fermeRepository.findById(id);
+        if (ferme.get().getChamps().stream().anyMatch(champ -> champ.getArbres().stream().anyMatch(arbre -> arbre.getDetailRecoltes().size() > 0))) {
+            throw new FermeException("Impossible de supprimer la ferme car elle a des champs avec des arbres avec des recoltes");
+        }
         if (ferme.isPresent()) {
             fermeRepository.delete(ferme.get());
             return true;
@@ -117,6 +120,8 @@ public class FermeService {
         }
         return totalSuperficie;
     }
+
+  
 
 
 

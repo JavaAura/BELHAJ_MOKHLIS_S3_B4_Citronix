@@ -1,8 +1,12 @@
 package com.app.Citronix.Service;
 
+import com.app.Citronix.Exception.RecolteException;
 import com.app.Citronix.Model.DTO.Request.VenteRequest;
 import com.app.Citronix.Model.DTO.Response.VenteResponse;
+import com.app.Citronix.Model.Entity.Recolte;
+import com.app.Citronix.Model.Entity.Vente;
 import com.app.Citronix.Model.Mapper.VenteMapper;
+import com.app.Citronix.Repository.RecolteRepository;
 import com.app.Citronix.Repository.VenteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,9 +22,19 @@ public class VenteService {
     private VenteMapper venteMapper;
     @Autowired
     private VenteRepository venteRepository;
+    @Autowired
+    private RecolteRepository recolteRepository;
 
     public VenteResponse saveVente(VenteRequest venteRequest) {
-        return venteMapper.toResponse(venteRepository.save(venteMapper.toEntity(venteRequest))); 
+        Vente vente = venteMapper.toEntity(venteRequest);
+        Recolte recolte = recolteRepository.findById(venteRequest.getRecolte().getId())     
+                .orElseThrow(  () -> new RecolteException("Recolte non trouvée"));
+        vente.setRecolte(recolte);
+
+        if (vente.getQuantite() > recolte.getTotalQuantiteRestante()) {
+            throw new RecolteException("Quantité vendue supérieure à la quantité recoltée");
+        }
+        return venteMapper.toResponse(venteRepository.save(vente)); 
     }
 
     public List<VenteResponse> getAllVentes() {
@@ -31,11 +45,11 @@ public class VenteService {
         return venteRepository.findById(id).map(venteMapper::toResponse);
     }
 
-    public VenteResponse updateVente(VenteRequest venteRequest) {
-        if (venteRepository.existsById(venteRequest.getId())) {
-            return venteMapper.toResponse(venteRepository.save(venteMapper.toEntity(venteRequest)));
+    public Optional<VenteResponse> updateVente(Long id, VenteRequest venteRequest) {
+        if (venteRepository.existsById(id)) {
+            return Optional.of(venteMapper.toResponse(venteRepository.save(venteMapper.toEntity(venteRequest))));
         }
-        return null;
+        return Optional.empty();
     }
 
     public boolean deleteVente(Long id) {
