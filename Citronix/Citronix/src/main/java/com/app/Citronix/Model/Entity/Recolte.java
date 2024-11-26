@@ -32,12 +32,19 @@ public class Recolte {
     @Column(nullable = false)
     private Double totalQuantite;
 
+    @Transient
+    private Double totalQuantiteRestante;
+
     @OneToMany(mappedBy = "recolte" ,fetch = FetchType.EAGER)
     private List<DetailRecolte> detailRecoltes;
 
+
+    @OneToMany(mappedBy = "recolte")
+    private List<Vente> ventes;
+
     @PrePersist
     @PostLoad
-    private void determineSaisonAndTotalQuantite() {
+    private void determineSaisonAndTotalQuantiteAndTotalQuantiteRestante() {
 
         if (this.dateRecolte.getMonthValue() >= 3 && this.dateRecolte.getMonthValue() <= 5) {
             this.saison = Saison.PRINTEMPS;
@@ -57,6 +64,18 @@ public class Recolte {
                 .mapToDouble(DetailRecolte::getQuantite)
                 .sum();
         }
+        // calculate total quantite restante
+        if (this.ventes == null || this.ventes.isEmpty()) {
+            this.totalQuantiteRestante = this.totalQuantite;
+        } else {
+            this.totalQuantiteRestante = this.totalQuantite - this.ventes.stream()
+                .filter(vente -> vente != null && vente.getQuantite() != 0)
+                .mapToDouble(Vente::getQuantite)
+                .sum();
+        }       
+
     }
+
+
 }
 

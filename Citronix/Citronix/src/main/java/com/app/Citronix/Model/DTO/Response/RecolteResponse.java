@@ -17,5 +17,7 @@ public class RecolteResponse {
     private LocalDate dateRecolte;
     private Saison saison;
     private Double totalQuantite;
+    private Double totalQuantiteRestante;
     private List<DetailRecolteResponseLight> detailRecoltes;
+    private List<VenteResponseLight> ventes;
 } 
