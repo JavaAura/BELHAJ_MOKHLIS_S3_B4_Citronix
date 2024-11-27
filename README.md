@@ -90,7 +90,7 @@ pour acceder a l'api documenter :
 
 ## CONCEPTION UML
 
-![diagramme class](<documment/diagramme-class.png>)
+![diagramme class](https://raw.githubusercontent.com/JavaAura/BELHAJ_MOKHLIS_S3_B4_Citronix/main/Documment/diagramme-class.png)
 
 
 
