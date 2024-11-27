@@ -92,6 +92,13 @@ pour acceder a l'api documenter :
 
 ![diagramme class](https://raw.githubusercontent.com/JavaAura/BELHAJ_MOKHLIS_S3_B4_Citronix/main/Documment/diagramme-class.png)
 
+## JIRA
+
+![jira url](https://belhajmokhlis.atlassian.net/jira/software/projects/CIT/boards/204/backlog?epics=visible&versions=visible)
+
+## PRESENTATION
+
+![presentation](https://www.canva.com/design/DAGXrOb4tgk/ybf957YF6_SeHjAKQ76WHg/edit?utm_content=DAGXrOb4tgk&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
 
 

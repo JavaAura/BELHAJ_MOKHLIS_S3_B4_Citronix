@@ -9864,4 +9864,23 @@ Database is already closed (to disable automatic closing at VM shutdown, add ";D
  2024-11-27 11:58:37 [http-nio-8080-exec-3] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
  2024-11-27 11:58:38 [http-nio-8080-exec-4] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 388 ms
  2024-11-27 13:46:48 [HikariPool-270 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-270 - Thread starvation or clock leap detected (housekeeper delta=1h29m6s496ms950µs700ns).
+ 2024-11-27 15:01:49 [main] INFO  c.a.C.CitronixApplicationTests - Starting CitronixApplicationTests using Java 1.8.0_411 on LAPTOP-G0FPLGLS with PID 23300 (started by YC in C:\Users\yc\Desktop\AURA\sprint3\BELHAJ_MOKHLIS_S3_B4_Citronix\Citronix\Citronix)
+ 2024-11-27 15:01:49 [main] DEBUG c.a.C.CitronixApplicationTests - Running with Spring Boot v2.7.18, Spring v5.3.31
+ 2024-11-27 15:01:49 [main] INFO  c.a.C.CitronixApplicationTests - The following 2 profiles are active: "secrets", "dev"
+ 2024-11-27 15:01:50 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+ 2024-11-27 15:01:50 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 69 ms. Found 6 JPA repository interfaces.
+ 2024-11-27 15:01:50 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+ 2024-11-27 15:01:51 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+ 2024-11-27 15:01:51 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+ 2024-11-27 15:01:51 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+ 2024-11-27 15:01:51 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+ 2024-11-27 15:01:51 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+ 2024-11-27 15:01:52 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+ 2024-11-27 15:01:52 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+ 2024-11-27 15:01:54 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+ 2024-11-27 15:01:54 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:citronixdb'
+ 2024-11-27 15:01:55 [main] INFO  c.a.C.CitronixApplicationTests - Started CitronixApplicationTests in 6.747 seconds (JVM running for 7.686)
+ 2024-11-27 15:01:56 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+ 2024-11-27 15:01:56 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+ 2024-11-27 15:01:56 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
  
