@@ -6,7 +6,6 @@ import com.app.Citronix.Model.DTO.Request.FermeRequest;
 import com.app.Citronix.Model.DTO.Response.ChampResponse;
 import com.app.Citronix.Model.Entity.Champ;
 import com.app.Citronix.Model.Entity.Ferme;
-import com.app.Citronix.Model.Entity.Arbre;
 import com.app.Citronix.Model.Mapper.ChampMapper;
 import com.app.Citronix.Repository.ChampRepository;
 import com.app.Citronix.Repository.FermeRepository;
@@ -28,7 +27,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
@@ -65,29 +63,24 @@ class ChampServiceTest {
 
     @BeforeEach
     void setUp() {
-        // Create FermeRequest
         FermeRequest fermeRequest = new FermeRequest();
         fermeRequest.setId(1L);
 
-        // Setup ChampRequest
         champRequest = new ChampRequest();
         champRequest.setSuperficie(100.0);
         champRequest.setNom("Test Field");
         champRequest.setFerme(fermeRequest);  
 
-        // Setup Champ
         champ = new Champ();
         champ.setId(1L);
         champ.setSuperficie(100.0);
         champ.setNom("Test Field");
         champ.setFerme(ferme);
 
-        // Setup ChampResponse
         champResponse = new ChampResponse();
         champResponse.setSuperficie(100.0);
         champResponse.setNom("Test Field");
 
-        // Setup Ferme
         ferme = new Ferme();
         ferme.setId(1L);
         ferme.setAdress("test");
@@ -102,7 +95,6 @@ class ChampServiceTest {
         @Test
         @DisplayName("Should save champ successfully")
         void save_Success() {
-            // Setup
             when(champValidation.validateChampRequest(champRequest)).thenReturn(champRequest);
             when(champMapper.toEntity(champRequest)).thenReturn(champ);
             when(fermeRepository.findById(1L)).thenReturn(Optional.of(ferme));
@@ -110,15 +102,12 @@ class ChampServiceTest {
             when(champRepository.findById(1L)).thenReturn(Optional.of(champ));
             when(champMapper.toResponse(any(Champ.class))).thenReturn(champResponse);
 
-            // Execute
             ChampResponse result = champService.saveChamp(champRequest);
 
-            // Verify
             assertNotNull(result);
             assertEquals(champResponse.getSuperficie(), result.getSuperficie());
             assertEquals(champResponse.getNom(), result.getNom());
             
-            // Verify interactions
             verify(champMapper).toEntity(champRequest);
             verify(champRepository).save(any(Champ.class));
             verify(champMapper).toResponse(any(Champ.class));
@@ -187,16 +176,13 @@ class ChampServiceTest {
         @Test
         @DisplayName("Should update champ successfully")
         void update_Success() {
-            // Setup
             when(champValidation.validateUpdateChampRequest(champRequest)).thenReturn(champRequest);
             when(champRepository.findById(1L)).thenReturn(Optional.of(champ));
             when(champRepository.save(any(Champ.class))).thenReturn(champ);
             when(champMapper.toResponse(any(Champ.class))).thenReturn(champResponse);
 
-            // Execute
             ChampResponse result = champService.updateChamp(1L, champRequest);
 
-            // Verify
             assertNotNull(result);
             verify(champValidation).validateUpdateChampRequest(champRequest);
             verify(champRepository).save(any(Champ.class));

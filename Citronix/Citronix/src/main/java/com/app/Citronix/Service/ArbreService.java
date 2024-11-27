@@ -16,10 +16,11 @@ import com.app.Citronix.Repository.ArbreRepository;
 import com.app.Citronix.Repository.ChampRepository;
 import com.app.Citronix.Validation.ArbreValidation;
 
-import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
 import java.util.Optional;
 
+/**
+ * Classe de service pour la gestion des entités Arbre.
+ */
 @Service
 public class ArbreService {
     
@@ -35,6 +36,12 @@ public class ArbreService {
     @Autowired
     private ArbreValidation arbreValidation;
 
+    /**
+     * Enregistre une nouvelle entité Arbre basée sur l'ArbreRequest fourni.
+     *
+     * @param arbreRequest L'ArbreRequest contenant les données pour le nouvel Arbre.
+     * @return ArbreResponse contenant les données de l'Arbre enregistré.
+     */
     public ArbreResponse save(ArbreRequest arbreRequest) {
         arbreValidation.validateArbreRequest(arbreRequest);
         Optional<Champ> champ = champRepository.findById( arbreRequest.getChamp().getId());
@@ -44,6 +51,12 @@ public class ArbreService {
         return arbreMapper.toResponse(arbre);
     }
 
+    /**
+     * Récupère une liste paginée de toutes les entités Arbre.
+     *
+     * @param pageable Objet Pageable pour les informations de pagination.
+     * @return Page d'objets ArbreResponse.
+     */
     public Page<ArbreResponse> findAll(Pageable pageable) {
         Page<Arbre> arbres = arbreRepository.findAll(pageable);
         return arbres.map(arbre -> {
@@ -51,12 +64,27 @@ public class ArbreService {
         });
     }
 
+    /**
+     * Trouve une entité Arbre par son ID.
+     *
+     * @param id L'ID de l'Arbre à trouver.
+     * @return ArbreResponse contenant les données de l'Arbre trouvé.
+     * @throws ResponseException si l'Arbre n'est pas trouvé.
+     */
     public ArbreResponse findById(Long id) {
         Arbre arbre = arbreRepository.findById(id)
         .orElseThrow(() -> new ResponseException("Arbre non trouvé avec l'id: " + id,HttpStatus.NOT_FOUND));
      
         return arbreMapper.toResponse(arbre);
     }
+
+    /**
+     * Supprime une entité Arbre par son ID.
+     *
+     * @param id L'ID de l'Arbre à supprimer.
+     * @return true si l'Arbre a été supprimé avec succès, false s'il n'a pas été trouvé.
+     * @throws ResponseException si l'Arbre a des récoltes associées et ne peut pas être supprimé.
+     */
     public boolean deleteById(Long id) {
         Optional<Arbre> arbre = arbreRepository.findById(id);
         if (arbre.isPresent()) {

@@ -150,7 +150,7 @@ class ArbreServiceTest {
 
         boolean result = arbreService.deleteById(1L);
 
-        assertFalse(result );
+        assertFalse(result);
         verify(arbreRepository, never()).delete(any());
     }
 } 
