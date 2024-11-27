@@ -94,11 +94,11 @@ pour acceder a l'api documenter :
 
 ## JIRA
 
-![jira url](https://belhajmokhlis.atlassian.net/jira/software/projects/CIT/boards/204/backlog?epics=visible&versions=visible)
+[jira url](https://belhajmokhlis.atlassian.net/jira/software/projects/CIT/boards/204/backlog?epics=visible&versions=visible)
 
 ## PRESENTATION
 
-![presentation](https://www.canva.com/design/DAGXrOb4tgk/ybf957YF6_SeHjAKQ76WHg/edit?utm_content=DAGXrOb4tgk&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+[presentation](https://www.canva.com/design/DAGXrOb4tgk/ybf957YF6_SeHjAKQ76WHg/edit?utm_content=DAGXrOb4tgk&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
 
 
