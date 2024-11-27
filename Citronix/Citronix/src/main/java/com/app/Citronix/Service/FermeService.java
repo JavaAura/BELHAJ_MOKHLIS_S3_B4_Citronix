@@ -18,6 +18,10 @@ import com.app.Citronix.Model.Mapper.FermeMapper;
 import com.app.Citronix.Repository.FermeRepository;
 import com.app.Citronix.Specification.FermeSpecifications;
 
+/**
+ * Classe de service pour la gestion des fermes.
+ * Gère les opérations CRUD et la logique métier liée aux fermes.
+ */
 @Service
 public class FermeService {
 	@Autowired
@@ -26,17 +30,32 @@ public class FermeService {
     @Autowired
 	private FermeMapper fermeMapper;
 
+    /**
+     * Crée une nouvelle ferme dans le système.
+     * @param fermeRequest L'objet de transfert de données contenant les détails de la ferme
+     * @return FermeResponse contenant les informations de la ferme sauvegardée
+     */
     public FermeResponse saveFerme(FermeRequest fermeRequest) {
         Ferme ferme = fermeMapper.toEntity(fermeRequest);
         ferme = fermeRepository.save(ferme);
         return fermeMapper.toResponse(ferme);
     }
 
+    /**
+     * Récupère toutes les fermes avec pagination.
+     * @param pageable Informations de pagination
+     * @return Page de FermeResponse contenant les informations des fermes
+     */
 	public Page<FermeResponse> getAllFermes(Pageable pageable) {
         Page<Ferme> fermes = fermeRepository.findAll(pageable);
         return fermes.map(fermeMapper::toResponse);
     }
 
+    /**
+     * Récupère une ferme spécifique par son ID.
+     * @param id L'ID de la ferme à récupérer
+     * @return FermeResponse contenant les informations de la ferme ou null si non trouvée
+     */
     public FermeResponse getFermeById(Long id) {
         Optional<Ferme> ferme = fermeRepository.findById(id);
         if (ferme.isPresent()) {
@@ -45,6 +64,12 @@ public class FermeService {
         return null;
     }
 
+    /**
+     * Met à jour les informations d'une ferme existante.
+     * @param id L'ID de la ferme à mettre à jour
+     * @param fermeRequest Les informations mises à jour de la ferme
+     * @return FermeResponse contenant les informations mises à jour ou null si non trouvée
+     */
     public FermeResponse updateFerme(Long id, FermeRequest fermeRequest) {
         fermeRequest.setId(id);
         validateUpdateFerme(fermeRequest);
@@ -60,6 +85,11 @@ public class FermeService {
         return null;
     }
 
+    /**
+     * Valide la requête de mise à jour de la ferme, en s'assurant que la ferme existe et a une superficie valide.
+     * @param fermeRequest La requête de mise à jour de la ferme à valider
+     * @throws ResponseException si la validation échoue
+     */
     private void validateUpdateFerme(FermeRequest fermeRequest) {
         Ferme ferme = fermeRepository.findById(fermeRequest.getId())
                 .orElseThrow(() -> new ResponseException("Ferme non trouvé avec l'id: " + fermeRequest.getId(),HttpStatus.NOT_FOUND));
@@ -69,6 +99,12 @@ public class FermeService {
         }
     }
 
+    /**
+     * Supprime une ferme si elle n'a pas de récoltes enregistrées.
+     * @param id L'ID de la ferme à supprimer
+     * @return true si la suppression a réussi, false si la ferme n'est pas trouvée
+     * @throws ResponseException si la ferme a des champs avec des arbres ayant des récoltes
+     */
     public boolean deleteFerme(Long id) {
         Optional<Ferme> ferme = fermeRepository.findById(id);
         if (ferme.isPresent()) {
@@ -82,7 +118,18 @@ public class FermeService {
         }
     }
 
-     public Page<FermeResponse> searchFermes(
+    /**
+     * Recherche des fermes selon différents critères avec pagination.
+     * @param nom Filtre sur le nom de la ferme
+     * @param adress Filtre sur l'adresse de la ferme
+     * @param minSuperficie Filtre sur la superficie minimale
+     * @param maxSuperficie Filtre sur la superficie maximale
+     * @param startDate Filtre sur la date de début
+     * @param endDate Filtre sur la date de fin
+     * @param pageable Informations de pagination
+     * @return Page de FermeResponse correspondant aux critères de recherche
+     */
+    public Page<FermeResponse> searchFermes(
             String nom, 
             String adress, 
             Double minSuperficie, 
@@ -103,7 +150,11 @@ public class FermeService {
                 .map(fermeMapper::toResponse);
     }
 
-
+    /**
+     * Calcule la superficie disponible (non utilisée) d'une ferme.
+     * @param ferme La ferme pour laquelle calculer la superficie disponible
+     * @return La superficie disponible en hectares
+     */
     public double getSuperficieLibre(Ferme ferme) {
         double superficieLibre = ferme.getSuperficie();
         for (Champ champ : ferme.getChamps()) {
@@ -112,6 +163,12 @@ public class FermeService {
         return superficieLibre;
     }
 
+    /**
+     * Calcule la superficie totale de tous les champs d'une ferme.
+     * @param id L'ID de la ferme
+     * @return La superficie totale de tous les champs en hectares
+     * @throws ResponseException si la ferme n'est pas trouvée
+     */
     public double totalSuperficieChamps (Long id) {
         Ferme ferme = fermeRepository.findById(id)
         .orElseThrow(() -> new ResponseException("Ferme non trouvé avec l'id: " + id, HttpStatus.NOT_FOUND));

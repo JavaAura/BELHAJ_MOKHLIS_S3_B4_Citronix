@@ -4,7 +4,6 @@ import com.app.Citronix.Exception.ResponseException;
 import com.app.Citronix.Model.DTO.Request.FermeRequest;
 import com.app.Citronix.Model.DTO.Response.FermeResponse;
 import com.app.Citronix.Model.Entity.Ferme;
-import com.app.Citronix.Model.Entity.Recolte;
 import com.app.Citronix.Model.Entity.Champ;
 import com.app.Citronix.Model.Entity.Arbre;
 import com.app.Citronix.Model.Entity.DetailRecolte;
@@ -127,10 +126,8 @@ class FermeServiceTest {
 
    @Test
 void deleteFerme_WithRecoltes_ThrowsException() {
-    // Créer un mock de Ferme
     Ferme fermeWithRecoltes = mock(Ferme.class);
 
-    // Créer des champs et des arbres fictifs avec des récoltes
     Champ champMock = mock(Champ.class);
     Arbre arbreMock = mock(Arbre.class);
 
@@ -139,7 +136,6 @@ void deleteFerme_WithRecoltes_ThrowsException() {
     when(fermeWithRecoltes.getChamps()).thenReturn(Arrays.asList(champMock));
     when(fermeRepository.findById(1L)).thenReturn(Optional.of(fermeWithRecoltes));
 
-    // Vérifier que l'exception est levée
     ResponseException exception = assertThrows(ResponseException.class, () -> fermeService.deleteFerme(1L));
     assertEquals("Impossible de supprimer la ferme car elle a des champs avec des arbres avec des recoltes", exception.getMessage());
 }

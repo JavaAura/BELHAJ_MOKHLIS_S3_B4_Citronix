@@ -17,6 +17,9 @@ import com.app.Citronix.Repository.FermeRepository;
 import com.app.Citronix.Validation.ChampValidation;
 import java.util.Optional;
 
+/**
+ * Service gérant les opérations liées aux champs agricoles.
+ */
 @Service
 public class ChampService {
     
@@ -33,6 +36,13 @@ public class ChampService {
     private FermeRepository fermeRepository;
 
 
+    /**
+     * Enregistre un nouveau champ dans la base de données.
+     * 
+     * @param champRequest Les données du champ à créer
+     * @return ChampResponse Les informations du champ créé
+     * @throws ResponseException Si la ferme associée n'existe pas
+     */
     public ChampResponse saveChamp(ChampRequest champRequest) { 
         champRequest = champValidation.validateChampRequest(champRequest);
         Champ champ = champMapper.toEntity(champRequest);
@@ -46,11 +56,24 @@ public class ChampService {
         return getChampById( champ.getId());
     }
 
+    /**
+     * Récupère tous les champs avec pagination.
+     * 
+     * @param pageable Les informations de pagination
+     * @return Page<ChampResponse> Une page contenant les champs
+     */
     public Page<ChampResponse> getAllChamps(Pageable pageable) {
         Page<Champ> champs = champRepository.findAll(pageable);
         return champs.map(champMapper::toResponse);
     }
 
+    /**
+     * Récupère un champ par son identifiant.
+     * 
+     * @param id L'identifiant du champ
+     * @return ChampResponse Les informations du champ
+     * @throws ResponseException Si le champ n'est pas trouvé
+     */
     public ChampResponse getChampById(long id) {
         Optional<Champ> champ = champRepository.findById(id);
         if (champ.isPresent()) {
@@ -60,6 +83,14 @@ public class ChampService {
         }
     }
 
+    /**
+     * Met à jour les informations d'un champ existant.
+     * 
+     * @param id L'identifiant du champ à modifier
+     * @param champRequest Les nouvelles données du champ
+     * @return ChampResponse Les informations du champ mis à jour
+     * @throws ResponseException Si le champ n'est pas trouvé
+     */
     public ChampResponse updateChamp(Long id, ChampRequest champRequest) {
         champRequest.setId(id);
         champRequest = champValidation.validateUpdateChampRequest(champRequest);
@@ -74,6 +105,13 @@ public class ChampService {
             return champMapper.toResponse(champ);
     }
 
+    /**
+     * Supprime un champ de la base de données.
+     * 
+     * @param id L'identifiant du champ à supprimer
+     * @return boolean true si le champ a été supprimé, false sinon
+     * @throws ResponseException Si le champ contient des arbres avec des récoltes
+     */
     public boolean deleteChamp(Long id) {
         Optional<Champ> champ = champRepository.findById(id);
         if (champ.isPresent()) {

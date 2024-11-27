@@ -73,7 +73,6 @@ class RecolteDetailServiceTest {
 
     @BeforeEach
     void setUp() {
-        // Initialize test data
         arbre = new Arbre();
         arbre.setId(1L);
 
@@ -108,17 +107,14 @@ class RecolteDetailServiceTest {
         @Test
         @DisplayName("Should get all recolte details successfully")
         void getAllRecolteDetails_Success() {
-            // Arrange
             Pageable pageable = PageRequest.of(0, 10);
             Page<DetailRecolte> detailRecoltePage = new PageImpl<>(Arrays.asList(detailRecolte));
             
             when(recolteDetailRepository.findAll(pageable)).thenReturn(detailRecoltePage);
             when(detailRecolteMapper.toResponse(any(DetailRecolte.class))).thenReturn(detailRecolteResponse);
 
-            // Act
             Page<DetailRecolteResponse> result = recolteDetailService.getAllRecolteDetails(pageable);
 
-            // Assert
             assertNotNull(result);
             assertFalse(result.isEmpty());
             assertEquals(1, result.getTotalElements());
@@ -127,14 +123,11 @@ class RecolteDetailServiceTest {
         @Test
         @DisplayName("Should get recolte detail by ID successfully")
         void getRecolteDetailById_Success() {
-            // Arrange
             when(recolteDetailRepository.findById(1L)).thenReturn(Optional.of(detailRecolte));
             when(detailRecolteMapper.toResponse(detailRecolte)).thenReturn(detailRecolteResponse);
 
-            // Act
             DetailRecolteResponse result = recolteDetailService.getRecolteDetailById(1L);
 
-            // Assert
             assertNotNull(result);
             assertEquals(detailRecolteResponse.getQuantite(), result.getQuantite());
         }
@@ -146,7 +139,6 @@ class RecolteDetailServiceTest {
         @Test
         @DisplayName("Should create new recolte detail successfully")
         void createRecolteDetail_NewRecolte_Success() {
-            // Arrange
             when(detailRecolteMapper.toEntity(detailRecolteRequest)).thenReturn(detailRecolte);
             when(recolteMapper.toEntity(recolteRequest)).thenReturn(recolte);
             when(recolteRepository.findBySaisonAndDateYear(any(), anyInt())).thenReturn(Optional.empty());
@@ -155,10 +147,8 @@ class RecolteDetailServiceTest {
             when(recolteDetailRepository.save(any(DetailRecolte.class))).thenReturn(detailRecolte);
             when(detailRecolteMapper.toResponse(detailRecolte)).thenReturn(detailRecolteResponse);
 
-            // Act
             DetailRecolteResponse result = recolteDetailService.createRecolteDetail(detailRecolteRequest);
 
-            // Assert
             assertNotNull(result);
             verify(recolteDetailValidation).validateQuantite(arbre, detailRecolteRequest.getQuantite());
             verify(recolteDetailValidation).validateUniqueRecolte(recolte.getId(), arbre.getId());
@@ -167,7 +157,6 @@ class RecolteDetailServiceTest {
         @Test
         @DisplayName("Should create recolte detail with existing recolte successfully")
         void createRecolteDetail_ExistingRecolte_Success() {
-            // Arrange
             when(detailRecolteMapper.toEntity(detailRecolteRequest)).thenReturn(detailRecolte);
             when(recolteMapper.toEntity(recolteRequest)).thenReturn(recolte);
             when(recolteRepository.findBySaisonAndDateYear(any(), anyInt())).thenReturn(Optional.of(recolte));
@@ -175,10 +164,8 @@ class RecolteDetailServiceTest {
             when(recolteDetailRepository.save(any(DetailRecolte.class))).thenReturn(detailRecolte);
             when(detailRecolteMapper.toResponse(detailRecolte)).thenReturn(detailRecolteResponse);
 
-            // Act
             DetailRecolteResponse result = recolteDetailService.createRecolteDetail(detailRecolteRequest);
 
-            // Assert
             assertNotNull(result);
             verify(recolteRepository, never()).save(any(Recolte.class));
         }
@@ -190,56 +177,44 @@ class RecolteDetailServiceTest {
         @Test
         @DisplayName("Should set PRINTEMPS for March-May")
         void setSaison_Printemps() {
-            // Arrange
             Recolte recolte = new Recolte();
             recolte.setDateRecolte(LocalDate.of(2024, 4, 15));
 
-            // Act
             recolteDetailService.setSaisonRecolte(recolte);
 
-            // Assert
             assertEquals(Saison.PRINTEMPS, recolte.getSaison());
         }
 
         @Test
         @DisplayName("Should set ETE for June-August")
         void setSaison_Ete() {
-            // Arrange
             Recolte recolte = new Recolte();
             recolte.setDateRecolte(LocalDate.of(2024, 7, 15));
 
-            // Act
             recolteDetailService.setSaisonRecolte(recolte);
 
-            // Assert
             assertEquals(Saison.ETE, recolte.getSaison());
         }
 
         @Test
         @DisplayName("Should set AUTOMNE for September-November")
         void setSaison_Automne() {
-            // Arrange
             Recolte recolte = new Recolte();
             recolte.setDateRecolte(LocalDate.of(2024, 10, 15));
 
-            // Act
             recolteDetailService.setSaisonRecolte(recolte);
 
-            // Assert
             assertEquals(Saison.AUTOMNE, recolte.getSaison());
         }
 
         @Test
         @DisplayName("Should set HIVER for December-February")
         void setSaison_Hiver() {
-            // Arrange
             Recolte recolte = new Recolte();
             recolte.setDateRecolte(LocalDate.of(2024, 1, 15));
 
-            // Act
             recolteDetailService.setSaisonRecolte(recolte);
 
-            // Assert
             assertEquals(Saison.HIVER, recolte.getSaison());
         }
     }

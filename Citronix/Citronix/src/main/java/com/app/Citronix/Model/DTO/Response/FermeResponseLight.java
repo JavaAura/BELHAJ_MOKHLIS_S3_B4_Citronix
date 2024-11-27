@@ -1,7 +1,6 @@
 package com.app.Citronix.Model.DTO.Response;
 
 import java.time.LocalDate;
-import java.util.List;
 
 import lombok.*;
 
